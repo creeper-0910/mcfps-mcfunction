@@ -1,0 +1,26 @@
+[
+	{
+		"function": "minecraft:copy_nbt",
+		"source": {
+			"type": "minecraft:storage",
+			"source": "minecraft:data"
+		},
+		"ops": [
+			{
+				"source": "Other.Bullets",
+				"target": "Bullets",
+				"op": "replace"
+			},
+			{
+				"source": "Other.CustomModelData",
+				"target": "CustomModelData",
+				"op": "replace"
+			},
+			{
+				"source": "Other.display",
+				"target": "display",
+				"op": "replace"
+			}
+		]
+	}
+]
