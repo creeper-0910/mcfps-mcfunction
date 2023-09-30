@@ -1,6 +1,8 @@
 {
     "values": [
         "system:respawn",
-        "gun:gun_loop"
+        "gun:gun_loop",
+        "system:loop",
+        "skill:loop"
     ]
 }
