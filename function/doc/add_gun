@@ -1,0 +1,4 @@
+1.gun:gun_loopに銃固有処理登録を入れる
+2.銃固有処理を入れる gun:bullet_pos, gun:bullet_moveを参考に
+3.gun:reload.mcfunctionにリロード後処理を入れる
+4.gun:give/に取得コマンドを書く
