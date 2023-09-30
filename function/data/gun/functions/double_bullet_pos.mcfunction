@@ -12,6 +12,8 @@ tag @s remove Shooter
 tag @e remove HitterT
 
 execute as @s at @s run tp @s ~ ~ ~ ~-1 ~-2
+playsound minecraft:entity.generic.explode master @a ~ ~ ~ 0.25 2 0
+playsound minecraft:block.fence_gate.open master @a ~ ~ ~ 0.5 1.5 0
 
 scoreboard players remove @s Bullets 3
 execute store result storage minecraft:data Bullets double 1 run scoreboard players get @s Bullets
