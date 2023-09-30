@@ -12,3 +12,8 @@ tag @s remove Shooter
 tag @e remove HitterT
 
 execute as @s at @s run tp @s ~ ~ ~ ~-1 ~-2
+
+scoreboard players remove @s Bullets 1
+execute store result storage minecraft:data Bullets double 1 run scoreboard players get @s Bullets
+item modify entity @s weapon.mainhand gun:gun_bullet_nbt
+item modify entity @s weapon.mainhand gun:gun_bullet_name/first_gun

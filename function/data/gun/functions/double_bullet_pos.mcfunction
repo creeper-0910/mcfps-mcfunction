@@ -10,3 +10,10 @@ execute as @e[tag=HitterT] run damage @s 4 drown
 execute as @e[tag=HitterT] run playsound entity.experience_orb.pickup player @s ~ ~ ~ 5
 tag @s remove Shooter
 tag @e remove HitterT
+
+execute as @s at @s run tp @s ~ ~ ~ ~-1 ~-2
+
+scoreboard players remove @s Bullets 3
+execute store result storage minecraft:data Bullets double 1 run scoreboard players get @s Bullets
+item modify entity @s weapon.mainhand gun:gun_bullet_nbt
+item modify entity @s weapon.mainhand gun:gun_bullet_name/anko_gun
