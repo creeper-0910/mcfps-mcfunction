@@ -10,3 +10,5 @@ execute as @e[tag=HitterT] run damage @s 2 arrow
 execute as @e[tag=HitterT] run playsound entity.experience_orb.pickup player @s ~ ~ ~ 5
 tag @s remove Shooter
 tag @e remove HitterT
+
+execute as @s at @s run tp @s ~ ~ ~ -1 ~-2
