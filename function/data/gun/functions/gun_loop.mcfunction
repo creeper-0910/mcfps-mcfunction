@@ -22,5 +22,9 @@ execute as @e[tag=marker1] at @s as @a if score @s playerid = #dummy pid run par
 kill @e[tag=marker1,scores={timer=100..}]
 
 scoreboard players add @e[tag=rotation5] Rotation 5
+scoreboard players add @e[tag=rotation10] Rotation 10
+scoreboard players add @e[tag=rotation20] Rotation 20
+scoreboard players add @e[tag=rotation30] Rotation 30
+scoreboard players add @e[tag=rotation40] Rotation 40
 execute as @e[tag=rotation5] if score @s Rotation matches 180.. run scoreboard players set @s Rotation -180
 execute as @e[tag=rotation5] store result entity @s Rotation[0] float 1 run scoreboard players get @s Rotation
