@@ -20,6 +20,11 @@
 				"source": "Other.display",
 				"target": "display",
 				"op": "replace"
+			},
+			{
+				"source": "Other.kusa",
+				"target": "kusa",
+				"op": "replace"
 			}
 		]
 	}
