@@ -1,0 +1,2 @@
+execute if block ~ ~ ~ minecraft:air positioned ^ ^ ^0.5 run function system:recursive
+execute unless block ~ ~ ~ minecraft:air run particle minecraft:dust 0.7 0.1 0 0.5 ~ ~ ~ 0.3 64 0.3 0.1 10000 force
