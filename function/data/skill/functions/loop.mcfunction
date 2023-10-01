@@ -24,6 +24,9 @@ execute as @e[tag=pylon] at @s run scoreboard players reset @a[distance=5..] Pyl
 execute as @e[tag=pylon] at @s if entity @e[type=minecraft:potion,distance=..5] run particle ambient_entity_effect ~ ~ ~ 0 0 0 2 99 force @a
 execute as @e[tag=pylon] at @s run kill @e[type=minecraft:potion,distance=..5]
 
+# blackhole
+execute at @e[tag=newt] as @a[distance=..10,gamemode=survival] at @s facing entity @e[tag=newt,sort=nearest,limit=1] eyes if block ^ ^ ^0.8 minecraft:air run tp @s ^ ^ ^0.2
+
 scoreboard players add @e[tag=marker1] timer 1
 
 scoreboard players reset @a[scores={testfor=1..}] testfor
