@@ -3,6 +3,7 @@
         "system:respawn",
         "gun:gun_loop",
         "system:loop",
-        "skill:loop"
+        "skill:loop",
+        "item:loop"
     ]
 }
