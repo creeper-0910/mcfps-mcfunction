@@ -32,7 +32,7 @@ execute at @e[type=minecraft:area_effect_cloud,nbt={effects:[{id:"minecraft:luck
 execute as @e[tag=newt] unless score @s RotationAdd matches 30 run scoreboard players set @s RotationAdd 30
 execute as @e[tag=newt_close] unless score @s RotationAdd matches 0 run scoreboard players set @s RotationAdd 0
 execute at @e[tag=newt] as @a[distance=..10,gamemode=survival] at @s facing entity @e[tag=newt,sort=nearest,limit=1] eyes if block ^ ^ ^0.8 minecraft:air run tp @s ^ ^ ^0.2
-execute at @e[tag=newt] run particle minecraft:dust 0.5 0.8 0.9 1 ~ ~0.5 ~ 0.5 0.5 -0.5 0 25 force
+execute at @e[tag=newt] run particle minecraft:dust 0.5 0.8 0.9 1 ~ ~ ~ 0.5 0.3 -0.5 0 13 force
 execute as @e[tag=newt,scores={newt_timer=120..}] run data modify entity @s item.tag.CustomModelData set value 4
 execute as @e[tag=newt,scores={newt_timer=120..}] run tag @s add newt_close
 execute as @e[tag=newt,scores={newt_timer=120..},tag=newt_close] run tag @s remove newt
