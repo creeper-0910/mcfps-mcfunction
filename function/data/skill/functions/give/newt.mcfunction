@@ -1,0 +1,1 @@
+give @s minecraft:lingering_potion{display:{Name:'"ニュート"',Lore:['{"text":"重力の特異点を解き放つよ。","italic":false,"color":"aqua"}']},custom_potion_effects:[{id:"minecraft:luck",amplifier:31,duration:0,show_particles:false}],HideFlags:32,CustomPotionColor:14413}

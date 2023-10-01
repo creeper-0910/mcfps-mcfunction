@@ -27,6 +27,8 @@ execute as @e[tag=pylon] at @s if entity @e[type=minecraft:potion,distance=..5] 
 execute as @e[tag=pylon] at @s run kill @e[type=minecraft:potion,distance=..5]
 
 # blackhole
+execute at @e[type=minecraft:area_effect_cloud,nbt={effects:[{id:"minecraft:luck",amplifier:31b}]}] run function system:placenewt
+
 execute as @e[tag=newt] unless score @s RotationAdd matches 30 run scoreboard players set @s RotationAdd 30
 execute as @e[tag=newt_close] unless score @s RotationAdd matches 0 run scoreboard players set @s RotationAdd 0
 execute at @e[tag=newt] as @a[distance=..10,gamemode=survival] at @s facing entity @e[tag=newt,sort=nearest,limit=1] eyes if block ^ ^ ^0.8 minecraft:air run tp @s ^ ^ ^0.2
@@ -34,8 +36,10 @@ execute at @e[tag=newt] run particle minecraft:dust 0.5 0.8 0.9 1 ~ ~0.5 ~ 0.5 0
 execute as @e[tag=newt,scores={newt_timer=120..}] run data modify entity @s item.tag.CustomModelData set value 4
 execute as @e[tag=newt,scores={newt_timer=120..}] run tag @s add newt_close
 execute as @e[tag=newt,scores={newt_timer=120..},tag=newt_close] run tag @s remove newt
+execute as @e[tag=newt_close,scores={newt_timer=160..}] run kill @s
 
 scoreboard players add @e[tag=marker1] timer 1
 scoreboard players add @e[tag=newt] newt_timer 1
+scoreboard players add @e[tag=newt_close] newt_timer 1
 
 scoreboard players reset @a[scores={testfor=1..}] testfor
