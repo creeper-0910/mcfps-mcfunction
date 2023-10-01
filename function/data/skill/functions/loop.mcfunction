@@ -17,9 +17,9 @@ kill @e[tag=marker1,scores={timer=100..}]
 
 # pylon
 execute as @e[tag=pylon] at @s as @a[distance=..5] run scoreboard players add @s Pylon_heal 1
-execute as @a if entity @s[scores={Pylon_heal=125}] run effect give @s minecraft:regeneration 1 2
-execute as @a if entity @s[scores={Pylon_heal=125..}] run scoreboard players reset @s Pylon_heal
-execute as @e[tag=pylon] at @s as @a[distance=5..] run scoreboard players reset @s Pylon_heal
+effect give @a[scores={Pylon_heal=125..}] minecraft:regeneration 1 2
+scoreboard players reset @a[scores={Pylon_heal=125..}] Pylon_heal
+execute as @e[tag=pylon] at @s run scoreboard players reset @a[distance=5..] Pylon_heal
 
 execute as @e[tag=pylon] at @s if entity @e[type=minecraft:potion,distance=..5] run particle ambient_entity_effect ~ ~ ~ 0 0 0 2 99 force @a
 execute as @e[tag=pylon] at @s run kill @e[type=minecraft:potion,distance=..5]
