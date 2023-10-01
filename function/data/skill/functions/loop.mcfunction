@@ -17,7 +17,7 @@ kill @e[tag=marker1,scores={timer=100..}]
 
 # pylon
 execute as @e[tag=pylon] at @s as @a[distance=..5] run scoreboard players add @s Pylon_heal 1
-effect give @a[scores={Pylon_heal=125..}] minecraft:regeneration 1 2
+effect give @a[scores={Pylon_heal=125..}] minecraft:regeneration 1 2 true
 scoreboard players reset @a[scores={Pylon_heal=125..}] Pylon_heal
 execute as @e[tag=pylon] at @s run scoreboard players reset @a[distance=5..] Pylon_heal
 
