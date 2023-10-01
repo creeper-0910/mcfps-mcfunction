@@ -4,6 +4,7 @@
         "gun:gun_loop",
         "system:loop",
         "skill:loop",
-        "item:loop"
+        "item:loop",
+        "system:timer"
     ]
 }
