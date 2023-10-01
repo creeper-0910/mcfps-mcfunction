@@ -1,1 +1,1 @@
-give @s minecraft:lingering_potion{display:{Name:'"グレネード"',Lore:['{"text":"爆発注意!!!","italic":false,"color":"red"}']},custom_potion_effects:[{id:"minecraft:luck",amplifier:116,duration:0,show_particles:false}],HideFlags:32,CustomPotionColor:102662}
+give @s minecraft:lingering_potion{display:{Name:'"グレネード"',Lore:['{"text":"爆発注意!!!","italic":false,"color":"red"}']},custom_potion_effects:[{id:"minecraft:luck",amplifier:116,duration:0,show_particles:false}],HideFlags:32,CustomPotionColor:102662,CustomModelData:1}
