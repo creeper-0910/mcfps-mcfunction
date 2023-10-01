@@ -4,3 +4,4 @@ tellraw @a [{"selector":"@s","color":"green"},{"text":"は「偵察」を使用�
 gamemode spectator @s
 scoreboard players set @e[tag=InitMarker] timer 0
 tag @e[tag=InitMarker] remove InitMarker
+clear @s warped_fungus_on_a_stick{CustomModelData:1} 1
