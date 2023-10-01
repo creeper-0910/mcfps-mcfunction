@@ -1,0 +1,1 @@
+give @s minecraft:lingering_potion{display:{Name:'"空爆"',Lore:['{"text":"爆発注意!!!","italic":false,"color":"red"}']},custom_potion_effects:[{id:"minecraft:unluck",amplifier:116,duration:0,show_particles:false}],HideFlags:32,CustomPotionColor:102662,CustomModelData:2}
