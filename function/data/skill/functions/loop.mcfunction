@@ -1,4 +1,5 @@
 execute as @a[scores={testfor=1..},nbt={SelectedItem:{tag:{CustomModelData:1}}}] at @s run function skill:skill_test
+execute as @a[scores={testfor=1..},nbt={SelectedItem:{tag:{CustomModelData:2}}}] at @s run function system:placepylon
 execute as @a[scores={testfor=1..},nbt={SelectedItem:{tag:{CustomModelData:3}}}] at @s run function skill:
 
 # skill_test
