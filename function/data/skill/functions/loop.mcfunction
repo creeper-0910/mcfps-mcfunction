@@ -33,6 +33,6 @@ execute as @e[tag=newt,scores={newt_timer=120..}] run tag @s add newt_close
 execute as @e[tag=newt,scores={newt_timer=120..},tag=newt_close] run tag @s remove newt
 
 scoreboard players add @e[tag=marker1] timer 1
-scoreboard players set @e[tag=newt] newt_timer 1
+scoreboard players add @e[tag=newt] newt_timer 1
 
 scoreboard players reset @a[scores={testfor=1..}] testfor
