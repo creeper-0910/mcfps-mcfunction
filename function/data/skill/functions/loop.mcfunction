@@ -1,4 +1,5 @@
-execute as @a[scores={testfor=1..}] at @s run function skill:skill_test
+execute as @a[scores={testfor=1..},nbt={SelectedItem:{tag:{CustomModelData:1}}}] at @s run function skill:skill_test
+execute as @a[scores={testfor=1..},nbt={SelectedItem:{tag:{CustomModelData:3}}}] at @s run function skill:
 
 # skill_test
 execute as @e[tag=marker1,scores={timer=20}] run scoreboard players operation #dummy pid = @s pid
