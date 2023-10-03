@@ -1,0 +1,1 @@
+give @s minecraft:warped_fungus_on_a_stick{CustomModelData:3,display:{Name:'"直接X"'},Lore:['{"text":"10年に1度現れるというXの月の力を借りて攻撃する","italic":false,"color":"aqua"}']}
