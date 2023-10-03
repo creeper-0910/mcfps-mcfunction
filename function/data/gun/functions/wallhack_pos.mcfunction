@@ -11,7 +11,6 @@ kill @e[tag=bullet_wh]
 tag @e[tag=!Shooter] remove Hitter
 
 execute as @e[tag=HitterT] at @s run damage @s 2 arrow by @p[tag=Shooter]
-execute as @e[tag=HitterT] at @s run effect give @s minecraft:glowing 3 10
 execute as @e[tag=HitterT] run playsound entity.experience_orb.pickup player @s ~ ~ ~ 5
 tag @s remove Shooter
 tag @e remove HitterT
