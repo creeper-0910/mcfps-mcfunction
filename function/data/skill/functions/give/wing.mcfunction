@@ -1,0 +1,1 @@
+give @s minecraft:warped_fungus_on_a_stick{CustomModelData:4,display:{Name:'"Wing"'}}
