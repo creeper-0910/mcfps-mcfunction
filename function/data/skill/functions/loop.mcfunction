@@ -1,6 +1,7 @@
 execute as @a[scores={testfor=1..},nbt={SelectedItem:{tag:{CustomModelData:1}}}] at @s run function skill:skill_test
 execute as @a[scores={testfor=1..},nbt={SelectedItem:{tag:{CustomModelData:2}}}] at @s run function skill:pylon
 execute as @a[scores={testfor=1..},nbt={SelectedItem:{tag:{CustomModelData:3}}}] at @s run function skill:x
+execute as @a[scores={testfor=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] at @s run function skill:wing
 
 # skill_test
 execute as @e[tag=marker1,scores={timer=20}] run scoreboard players operation #dummy pid = @s pid
@@ -42,9 +43,15 @@ execute as @e[tag=newt,scores={newt_timer=120..},tag=newt_close] run tag @s remo
 execute as @e[tag=newt_close,scores={newt_timer=160..}] run kill @s
 
 #DirectX
-execute as @e[tag=ryujin] at @s run tp @s ^ ^ ^0.75
+execute as @e[tag=ryujin] at @s run tp @s ^ ^ ^1.2
 execute as @e[tag=ryujin] at @s unless block ~ ~ ~ minecraft:air run kill @s
 execute as @e[tag=ryujin] at @s run damage @e[distance=..0.99,limit=1,type=!creeper] 10 magic
+
+#Wing
+execute as @a[scores={wing=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] at @s run tp @a[scores={wing=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] ^ ^1.5 ^1
+execute as @a[scores={wing=1..}] as @s run scoreboard players add @s wing 1
+execute as @a[scores={wing=10..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] at @s run effect give @s slow_falling 1 1
+execute as @a[scores={wing=10..}] as @s run scoreboard players reset @s
 
 scoreboard players add @e[tag=marker1] timer 1
 scoreboard players add @e[tag=newt] newt_timer 1
