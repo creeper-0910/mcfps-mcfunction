@@ -1,0 +1,17 @@
+{
+	"criteria": {
+		"use_spyglass": {
+			"trigger": "minecraft:using_item",
+			"conditions": {
+				"item": {
+					"items": [
+						"minecraft:spyglass"
+					]
+				}
+			}
+		}
+	},
+	"rewards": {
+		"function": "gun:spyglass"
+	}
+}
