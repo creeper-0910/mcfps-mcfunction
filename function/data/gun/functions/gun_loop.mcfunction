@@ -8,8 +8,8 @@ execute as @a[scores={shot_gun=1,Bullets=1..},nbt={SelectedItem:{tag:{CustomMode
 
 #Search
 execute as @e[tag=ryujin] at @s run tp @s ^ ^ ^1.2
-execute as @e[tag=ryujin] at @s run scoreboard players add @s Search 1
 execute as @e[tag=ryujin] at @s run damage @e[distance=..2,limit=1,type=!creeper,scores={Search=1..}] 10 magic
+execute as @e[tag=ryujin] at @s run scoreboard players add @s Search 1
 execute as @e[tag=ryujin] at @s run effect give @e[distance=..2,limit=3,scores={Search=1..}] glowing 5 5
 execute as @e[scores={Search=30..},tag=ryujin] at @s run kill @s
 #Search_sn
