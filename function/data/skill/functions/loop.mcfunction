@@ -55,7 +55,7 @@ execute as @a[scores={wing=10..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] a
 execute as @a[scores={wing=10..}] as @s run scoreboard players reset @s
 
 # bat_bomb
-execute at @e[tag=bat_bomb,scores={timer=200..}] run summon creeper ~ ~ ~ {NoGravity:true,Fuse:1s,ignited:true}
+execute if entity @e[tag=bat_bomb,scores={timer=200..}] at @e[tag=bat_bomb] run summon creeper ~ ~ ~ {NoGravity:true,Fuse:1s,ignited:true}
 scoreboard players add @e[tag=bat_bomb] timer 1
 
 scoreboard players add @e[tag=marker1] timer 1
