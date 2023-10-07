@@ -4,6 +4,8 @@ execute as @a[scores={shot_gun=1,Bullets=1..},nbt={SelectedItem:{tag:{CustomMode
 execute as @a[scores={shot_gun=1,Bullets=1..},nbt={SelectedItem:{tag:{CustomModelData:3}}}] at @s run function gun:lmg_pos
 execute as @a[scores={shot_gun=1,Bullets=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] at @s run function gun:search_gun_pos
 
+execute as @s[scores={Bullets=1..},nbt={SelectedItem:{id:"minecraft:spyglass", tag:{CustomModelData:512}}}] at @s run function gun:sniper_pos
+
 #Search
 execute as @e[tag=ryujin] at @s run tp @s ^ ^ ^1.2
 execute as @e[tag=ryujin] at @s run scoreboard players add @s Search 1
