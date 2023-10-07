@@ -16,8 +16,8 @@ execute as @e[scores={Search=30..},tag=ryujin] at @s run kill @s
 execute as @e[tag=ryujin_sn] at @s run tp @s ^ ^ ^1.2
 execute as @e[tag=ryujin_sn] at @s run particle flash ~ ~ ~ 1 1 1 0 1
 execute as @e[tag=ryujin_sn] at @s run scoreboard players add @s Search_sn 1
-execute as @e[tag=ryujin_sn,scores={Search_sn=10}] at @s run effect give @e[distance=..5,limit=3] blindness 4 10
-execute as @e[scores={Search_sn=10..},tag=ryujin_sn] at @s run kill @s
+execute as @e[tag=ryujin_sn,scores={Search_sn=30}] at @s run effect give @e[distance=..5,limit=3] blindness 4 10
+execute as @e[scores={Search_sn=30..},tag=ryujin_sn] at @s run kill @s
 
 scoreboard players reset @a[scores={shot_gun=1..}] shot_gun
 scoreboard players reset @a[scores={judgement_senak=1..}] judgement_senak
