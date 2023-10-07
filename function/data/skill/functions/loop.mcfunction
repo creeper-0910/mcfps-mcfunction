@@ -2,6 +2,7 @@ execute as @a[scores={testfor=1..},nbt={SelectedItem:{tag:{CustomModelData:1}}}]
 execute as @a[scores={testfor=1..},nbt={SelectedItem:{tag:{CustomModelData:2}}}] at @s run function skill:pylon
 execute as @a[scores={testfor=1..},nbt={SelectedItem:{tag:{CustomModelData:3}}}] at @s run function skill:x
 execute as @a[scores={testfor=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] at @s run function skill:wing
+execute as @a[scores={testfor=1..},nbt={SelectedItem:{tag:{CustomModelData:5}}}] at @s run function skill:bat_bomb
 
 # skill_test
 execute as @e[tag=marker1,scores={timer=20}] run scoreboard players operation #dummy pid = @s pid
@@ -52,6 +53,10 @@ execute as @a[scores={wing=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] at
 execute as @a[scores={wing=1..}] as @s run scoreboard players add @s wing 1
 execute as @a[scores={wing=10..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] at @s run effect give @s slow_falling 1 1
 execute as @a[scores={wing=10..}] as @s run scoreboard players reset @s
+
+# bat_bomb
+execute at @e[tag=bat_bomb,scores={timer=200..}] run summon creeper ~ ~ ~ {NoGravity:true,Fuse:1s,ignited:true}
+scoreboard players add @e[tag=bat_bomb] timer 1
 
 scoreboard players add @e[tag=marker1] timer 1
 scoreboard players add @e[tag=newt] newt_timer 1
