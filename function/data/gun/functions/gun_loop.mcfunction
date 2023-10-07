@@ -4,6 +4,7 @@ execute as @a[scores={shot_gun=1,Bullets=1..},nbt={SelectedItem:{tag:{CustomMode
 execute as @a[scores={shot_gun=1,Bullets=1..},nbt={SelectedItem:{tag:{CustomModelData:3}}}] at @s run function gun:lmg_pos
 execute as @a if entity @s[scores={shot_gun=1,Bullets=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] unless score @s judgement_senak matches 1 at @s run function gun:search_gun_pos
 execute as @a[scores={shot_gun=1,Bullets=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] if score @s judgement_senak matches 1 at @s run function gun:search_gun_pos_sn
+execute as @a[scores={shot_gun=1,Bullets=1..},nbt={SelectedItem:{tag:{CustomModelData:512}}}] at @s run function gun:sniper_pos
 
 #Search
 execute as @e[tag=ryujin] at @s run tp @s ^ ^ ^1.2
