@@ -1,7 +1,18 @@
 execute as @a[scores={testfor=1..},nbt={SelectedItem:{tag:{CustomModelData:1}}}] at @s run function skill:skill_test
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 execute as @a[scores={testfor=1..},nbt={SelectedItem:{tag:{CustomModelData:2}}}] at @s run function skill:pylon
 execute as @a[scores={testfor=1..},nbt={SelectedItem:{tag:{CustomModelData:3}}}] at @s run function skill:x
 execute as @a[scores={testfor=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] at @s run function skill:wing
+=======
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+execute as @a[scores={testfor=1..},nbt={SelectedItem:{tag:{CustomModelData:2}}}] at @s run function system:placepylon
+execute as @a[scores={testfor=1..},nbt={SelectedItem:{tag:{CustomModelData:3}}}] at @s run function skill:
+>>>>>>> Stashed changes
 
 # skill_test
 execute as @e[tag=marker1,scores={timer=20}] run scoreboard players operation #dummy pid = @s pid
