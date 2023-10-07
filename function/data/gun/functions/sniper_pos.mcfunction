@@ -11,7 +11,7 @@ execute as @e[tag=HitterT] run playsound entity.experience_orb.pickup player @s 
 tag @s remove Shooter
 tag @e remove HitterT
 
-execute as @s at @s run tp @s ~ ~ ~ ~5 ~
+execute as @s at @s run tp @s ~ ~ ~ ~ ~-6
 playsound minecraft:entity.generic.explode master @a ~ ~ ~ 0.25 2 0
 playsound minecraft:block.fence_gate.open master @a ~ ~ ~ 0.5 1.5 0
 
