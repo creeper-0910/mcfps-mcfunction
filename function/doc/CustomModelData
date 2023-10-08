@@ -1,0 +1,20 @@
+carrot_on_a_stick 1-4
+1 -> first_gun
+2 -> anko_gun
+3 -> lmg
+4 -> wallhack
+
+warped_fungus_on_a_stick 1-4
+1 -> scout
+2 -> pylon
+3 -> x
+4 -> wing
+
+spyglass 512
+512 -> sniper
+
+lingering_potion 1-4
+1 -> grenade
+2 -> newt
+3 -> bomb
+4 -> flashbang
