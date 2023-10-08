@@ -25,5 +25,6 @@ execute as @e[tag=ryujin_sn,scores={Search_sn=10}] at @s run effect give @e[dist
 execute as @e[scores={Search_sn=10..},tag=ryujin_sn] at @s run kill @s
 
 execute as @a if score @s TryReload1 matches 1.. run function gun:active_reload
+execute as @a if score @s TryReload2 matches 1.. run function gun:active_reload2
 
 scoreboard players remove @a[scores={noglow_sn=1..}] noglow_sn 1
