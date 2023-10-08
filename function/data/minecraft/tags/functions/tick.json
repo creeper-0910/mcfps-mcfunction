@@ -5,6 +5,7 @@
         "system:loop",
         "skill:loop",
         "item:loop",
-        "system:timer"
+        "system:timer",
+        "system:reset"
     ]
 }

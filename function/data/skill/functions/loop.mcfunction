@@ -61,5 +61,3 @@ scoreboard players add @e[tag=bat_bomb] timer 1
 scoreboard players add @e[tag=marker1] timer 1
 scoreboard players add @e[tag=newt] newt_timer 1
 scoreboard players add @e[tag=newt_close] newt_timer 1
-
-scoreboard players reset @a[scores={testfor=1..}] testfor

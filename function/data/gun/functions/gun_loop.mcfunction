@@ -3,9 +3,12 @@ execute as @a[scores={sneakcount=2}] store result score @s Bullets run data get 
 execute as @a[scores={shot_gun=1,Bullets=1..},nbt={SelectedItem:{tag:{CustomModelData:1}}}] at @s run function gun:bullet_pos
 execute as @a[scores={shot_gun=1,Bullets=1..},nbt={SelectedItem:{tag:{CustomModelData:2}}}] at @s run function gun:double_bullet_pos
 execute as @a[scores={shot_gun=1,Bullets=1..},nbt={SelectedItem:{tag:{CustomModelData:3}}}] at @s run function gun:lmg_pos
-execute as @a if entity @s[scores={shot_gun=1,Bullets=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] unless score @s judgement_senak matches 1 at @s run function gun:search_gun_pos
-execute as @a[scores={shot_gun=1,Bullets=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] if score @s judgement_senak matches 1 at @s run function gun:search_gun_pos_sn
-execute as @a[scores={shot_gun=1,Bullets=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] if score @s judgement_senak matches 1 at @s run scoreboard players set @s noglow_sn 2
+#execute as @a if entity @s[scores={shot_gun=1,Bullets=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] unless score @s judgement_senak matches 1 at @s run function gun:search_gun_pos
+execute as @a if entity @s[scores={shot_gun=1,Bullets=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] unless predicate system:is_sneak at @s run function gun:search_gun_pos
+#execute as @a[scores={shot_gun=1,Bullets=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] if score @s judgement_senak matches 1 at @s run function gun:search_gun_pos_sn
+execute as @a[scores={shot_gun=1,Bullets=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] if predicate system:is_sneak at @s run function gun:search_gun_pos_sn
+#execute as @a[scores={shot_gun=1,Bullets=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] if score @s judgement_senak matches 1 at @s run scoreboard players set @s noglow_sn 2
+execute as @a[scores={shot_gun=1,Bullets=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] if predicate system:is_sneak at @s run scoreboard players set @s noglow_sn 31
 execute as @a[scores={sneakcount=2,Bullets=1..},nbt={SelectedItem:{tag:{CustomModelData:512}}}] at @s run function gun:sniper_pos
 
 #Search
@@ -21,11 +24,6 @@ execute as @e[tag=ryujin_sn] at @s run scoreboard players add @s Search_sn 1
 execute as @e[tag=ryujin_sn,scores={Search_sn=10}] at @s run effect give @e[distance=..5,limit=3,scores={noglow_sn=0}] blindness 4 10
 execute as @e[scores={Search_sn=10..},tag=ryujin_sn] at @s run kill @s
 
-scoreboard players reset @a[scores={shot_gun=1..}] shot_gun
-scoreboard players reset @a[scores={judgement_senak=1..}] judgement_senak
-
 execute as @a if score @s TryReload1 matches 1.. run function gun:active_reload
-
-execute as @a if score @s TryReload1 matches 1.. run scoreboard players reset @s TryReload1
 
 scoreboard players remove @a[scores={noglow_sn=1..}] noglow_sn 1
