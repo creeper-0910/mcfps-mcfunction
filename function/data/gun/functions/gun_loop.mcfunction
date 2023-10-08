@@ -10,6 +10,8 @@ execute as @a[scores={shot_gun=1,Bullets=1..},nbt={SelectedItem:{tag:{CustomMode
 #execute as @a[scores={shot_gun=1,Bullets=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] if score @s judgement_senak matches 1 at @s run scoreboard players set @s noglow_sn 2
 execute as @a[scores={shot_gun=1,Bullets=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] if predicate system:is_sneak at @s run scoreboard players set @s noglow_sn 31
 execute as @a[scores={sneakcount=2,Bullets=1..},nbt={SelectedItem:{tag:{CustomModelData:512}}}] at @s run function gun:sniper_pos
+execute as @a if entity @s[scores={shot_gun=1},nbt={Inventory:[{Slot:-106b,Count:1b,tag:{CustomModelData:4}}]}] unless predicate system:is_sneak at @s run function skill:wing
+execute as @a[scores={shot_gun=1},nbt={Inventory:[{Slot:-106b,Count:1b,tag:{CustomModelData:4}}]}] if predicate system:is_sneak at @s run effect give @s instant_health 1 2 true
 
 #Search
 execute as @e[tag=ryujin] at @s run tp @s ^ ^ ^1.2
@@ -23,6 +25,9 @@ execute as @e[tag=ryujin_sn] at @s run particle flash ~ ~ ~ 1 1 1 0 1
 execute as @e[tag=ryujin_sn] at @s run scoreboard players add @s Search_sn 1
 execute as @e[tag=ryujin_sn,scores={Search_sn=10}] at @s run effect give @e[distance=..5,limit=3,scores={noglow_sn=0}] blindness 4 10
 execute as @e[scores={Search_sn=10..},tag=ryujin_sn] at @s run kill @s
+#Wing@SearchGun
+execute as @a[scores={wing=1..},nbt={Inventory:[{Slot:-106b,Count:1b,tag:{CustomModelData:4}}]}] at @s run tp @a[scores={wing=1..},nbt={Inventory:[{Slot:-106b,Count:1b,tag:{CustomModelData:4}}]}] ^ ^1.5 ^1
+execute as @a[scores={wing=10..},nbt={Inventory:[{Slot:-106b,Count:1b,tag:{CustomModelData:4}}]}] at @s run effect give @s slow_falling 3 1
 
 execute as @a if score @s TryReload1 matches 1.. run function gun:active_reload
 execute as @a if score @s TryReload2 matches 1.. run function gun:active_reload2
