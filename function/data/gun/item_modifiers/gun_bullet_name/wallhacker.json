@@ -16,10 +16,16 @@
 				"text": "]"
 			},
 			{
+				"text": "["
+			},
+			{
 				"score": {
 					"name": "@s",
 					"objective": "Bullets2"
 				}
+			},
+			{
+				"text": "]"
 			}
 		]
 	}
