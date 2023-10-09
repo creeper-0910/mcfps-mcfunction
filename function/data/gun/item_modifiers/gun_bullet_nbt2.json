@@ -1,0 +1,21 @@
+[
+	{
+		"function": "minecraft:copy_nbt",
+		"source": {
+			"type": "minecraft:storage",
+			"source": "minecraft:data"
+		},
+		"ops": [
+			{
+				"source": "Bullets",
+				"target": "Bullets",
+				"op": "replace"
+			},
+			{
+				"source": "Bullets2",
+				"target": "Bullets2",
+				"op": "replace"
+			}
+		]
+	}
+]

@@ -5,5 +5,5 @@ tag @e[tag=ryujin,tag=init_ryujin_no_ken_wo_kurae_sn] remove init_ryujin_no_ken_
 scoreboard players remove @s Bullets2 1
 execute store result storage minecraft:data Bullets double 1 run scoreboard players get @s Bullets
 execute store result storage minecraft:data Bullets2 double 1 run scoreboard players get @s Bullets2
-item modify entity @s weapon.mainhand gun:gun_bullet_nbt
+item modify entity @s weapon.mainhand gun:gun_bullet_nbt2
 item modify entity @s weapon.mainhand gun:gun_bullet_name/wallhacker
