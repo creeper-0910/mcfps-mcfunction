@@ -15,6 +15,7 @@ execute as @a if entity @s[scores={shot_gun=1},nbt={Inventory:[{Slot:-106b,Count
 execute as @a if entity @s[scores={shot_gun=1},nbt={Inventory:[{Slot:-106b,Count:1b,tag:{CustomModelData:4}}]}] unless predicate system:is_sneak at @s run effect give @s jump_boost 2 3 true
 execute as @a[scores={shot_gun=1,Charge_Search=..4},nbt={Inventory:[{Slot:-106b,Count:1b,tag:{CustomModelData:4}}]}] if predicate system:is_sneak at @s run effect give @s instant_health 1 2 true
 execute as @a[scores={shot_gun=1,Charge_Search=5..},nbt={Inventory:[{Slot:-106b,Count:1b,tag:{CustomModelData:4}}]}] if predicate system:is_sneak at @s run function gun:search_gun_ult
+execute as @a[scores={sneakcount=2,Bullets=1..},nbt={SelectedItem:{tag:{CustomModelData:512}}}] at @s run function gun:amr_pos
 
 #Search
 execute as @e[tag=ryujin] at @s run tp @s ^ ^ ^1.2
