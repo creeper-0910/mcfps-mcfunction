@@ -63,5 +63,5 @@ scoreboard players add @e[tag=newt] newt_timer 1
 scoreboard players add @e[tag=newt_close] newt_timer 1
 
 # poll
-execute as @e[tag=test_poll] at @s facing entity @e[tag=test_poll,distance=0.3..10] eyes run function skill:poll_loop
-execute as @e[tag=test_poll] at @s facing entity @e[tag=test_poll,distance=0.3..10] eyes run function skill:poll_loop
+execute as @e[tag=test_poll] at @s facing entity @e[tag=test_poll,distance=0.3..10] eyes positioned ^ ^1 ^ run function skill:poll_loop
+execute as @e[tag=test_poll] at @s facing entity @e[tag=test_poll,distance=0.3..10] eyes positioned ^ ^-1 ^ run function skill:poll_loop
