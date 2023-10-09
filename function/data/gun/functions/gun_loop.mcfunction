@@ -23,6 +23,7 @@ execute as @e[tag=ryujin] at @s run effect give @e[distance=..2,limit=3,scores={
 execute as @e[tag=ryujin] at @s run damage @e[distance=..2,limit=1,type=!creeper,scores={Search=1..}] 10 magic
 execute as @e[tag=ryujin] at @s run scoreboard players add @s Search 1
 execute as @e[scores={Search=30..},tag=ryujin] at @s run kill @s
+execute as @e[tag=ryujin] at @s run playsound entity.experience_orb.pickup player @a[distance=..2,limit=1,scores={Search=1..}] ~ ~ ~ 5
 #Search_sn
 execute as @e[tag=ryujin_sn] at @s run tp @s ^ ^ ^1.2
 execute as @e[tag=ryujin_sn] at @s run particle flash ~ ~ ~ 1 1 1 0 1
