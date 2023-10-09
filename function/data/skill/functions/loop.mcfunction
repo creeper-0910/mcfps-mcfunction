@@ -63,4 +63,5 @@ scoreboard players add @e[tag=newt] newt_timer 1
 scoreboard players add @e[tag=newt_close] newt_timer 1
 
 # poll
-execute as @e[tag=test_poll] facing entity @e[tag=test_poll,distance=0.3..10] eyes run particle minecraft:instant_effect ^ ^ ^0.75 0 0 0 0 3 normal
+execute as @e[tag=test_poll] facing entity @e[tag=test_poll,distance=0.3..10] eyes run function skill:poll_loop
+execute as @e[tag=test_poll] facing entity @e[tag=test_poll,distance=0.3..10] eyes run function skill:poll_loop
