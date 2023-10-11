@@ -31,7 +31,7 @@ execute as @e[tag=pylon] at @s run kill @e[type=minecraft:potion,distance=..5]
 # blackhole
 execute at @e[type=minecraft:area_effect_cloud,nbt={effects:[{id:"minecraft:luck",amplifier:31b}]}] run function system:placenewt
 
-execute as @e[tag=newt] unless score @s RotationAdd matches 30 run scoreboard players set @s RotationAdd 30
+#execute as @e[tag=newt] unless score @s RotationAdd matches 30 run scoreboard players set @s RotationAdd 30
 execute as @e[tag=newt_close] unless score @s RotationAdd matches 0 run scoreboard players set @s RotationAdd 0
 execute at @e[tag=newt] as @a[distance=..10,gamemode=survival] at @s facing entity @e[tag=newt,sort=nearest,limit=1] eyes if block ^ ^ ^0.8 minecraft:air run tp @s ^ ^ ^0.2
 #execute at @e[tag=newt] run particle minecraft:dust 0 0.86 1 1 ~ ~ ~ 0.8 0.5 -0.8 0 50 force
