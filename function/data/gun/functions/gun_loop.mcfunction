@@ -11,17 +11,16 @@ execute as @a[scores={shot_gun=1,Bullets2=1..},nbt={SelectedItem:{tag:{CustomMod
 #execute as @a[scores={shot_gun=1,Bullets=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] if score @s judgement_senak matches 1 at @s run scoreboard players set @s noglow_sn 2
 execute as @a[scores={shot_gun=1,Bullets2=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] if predicate system:is_sneak at @s run scoreboard players set @s noglow_sn 31
 execute as @a[scores={sneakcount=2,Bullets=1..},nbt={SelectedItem:{tag:{CustomModelData:512}}}] at @s run function gun:sniper_pos
-execute as @a if entity @s[scores={shot_gun=1},nbt={Inventory:[{Slot:-106b,Count:1b,tag:{CustomModelData:4}}]}] unless predicate system:is_sneak at @s run effect give @s speed 2 50 true
-execute as @a if entity @s[scores={shot_gun=1},nbt={Inventory:[{Slot:-106b,Count:1b,tag:{CustomModelData:4}}]}] unless predicate system:is_sneak at @s run effect give @s jump_boost 2 3 true
-execute as @a[scores={shot_gun=1,Charge_Search=..4},nbt={Inventory:[{Slot:-106b,Count:1b,tag:{CustomModelData:4}}]}] if predicate system:is_sneak at @s run effect give @s instant_health 1 2 true
+#execute as @a if entity @s[scores={shot_gun=1},nbt={Inventory:[{Slot:-106b,Count:1b,tag:{CustomModelData:4}}]}] unless predicate system:is_sneak at @s run effect give @s speed 2 50 true
+#execute as @a if entity @s[scores={shot_gun=1},nbt={Inventory:[{Slot:-106b,Count:1b,tag:{CustomModelData:4}}]}] unless predicate system:is_sneak at @s run effect give @s jump_boost 2 3 true
+#execute as @a[scores={shot_gun=1,Charge_Search=..4},nbt={Inventory:[{Slot:-106b,Count:1b,tag:{CustomModelData:4}}]}] if predicate system:is_sneak at @s run effect give @s instant_health 1 2 true
 execute as @a[scores={shot_gun=1,Charge_Search=5..},nbt={Inventory:[{Slot:-106b,Count:1b,tag:{CustomModelData:4}}]}] if predicate system:is_sneak at @s run function gun:search_gun_ult
 execute as @a[scores={sneakcount=2,Bullets=1..},nbt={SelectedItem:{tag:{CustomModelData:513}}}] at @s run function gun:amr_pos
 
 #Search
 execute as @e[tag=ryujin] at @s run tp @s ^ ^ ^1.2
 execute as @e[tag=ryujin] at @s run effect give @e[distance=..2,limit=3,scores={Search=1..}] glowing 5 5
-execute as @e[tag=ryujin] at @s run damage @e[distance=..2,limit=1,type=!creeper,scores={Search=1..}] 10 magic
-execute as @e[tag=ryujin] at @s run playsound entity.experience_orb.pickup player @a[distance=..2,limit=1,scores={Search=1..}] ~ ~ ~ 5
+execute as @e[tag=ryujin] at @s run damage @e[distance=..2,limit=1,type=!creeper,scores={Search=1..}] 4 arrow
 execute as @e[tag=ryujin] at @s run scoreboard players add @s Search 1
 execute as @e[scores={Search=30..},tag=ryujin] at @s run kill @s
 #Search_sn
