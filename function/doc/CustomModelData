@@ -10,6 +10,8 @@ warped_fungus_on_a_stick 1-4
 2 -> pylon
 3 -> x
 4 -> wing
+5 -> bat_bomb
+5 -> rapido
 
 spyglass 512
 512 -> sniper
