@@ -6,8 +6,8 @@ execute as @e[tag=bullet_amr] at @s run function gun:bullet_move_amr
 kill @e[tag=bullet_amr]
 
 execute as @e[tag=!Shooter] run function gun:gun_hit
-execute as @e[tag=HitterT] at @s run damage @s 10 system:shot by @p[tag=Shooter]
-execute as @e[tag=HitterT] run playsound entity.experience_orb.pickup player @s ~ ~ ~ 5
+execute as @e[tag=HitterT] run damage @s 10 system:shot by @p[tag=Shooter]
+execute as @e[tag=HitterT] at @s run playsound entity.experience_orb.pickup player @s ~ ~ ~ 5
 tag @s remove Shooter
 tag @e remove HitterT
 
