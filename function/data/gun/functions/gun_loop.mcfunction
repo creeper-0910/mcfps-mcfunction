@@ -4,11 +4,8 @@ execute as @a[scores={sneakcount=2}] store result score @s Bullets run data get 
 execute as @a[scores={shot_gun=1,Bullets=1..},nbt={SelectedItem:{tag:{CustomModelData:1}}}] at @s run function gun:bullet_pos
 execute as @a[scores={shot_gun=1,Bullets=1..},nbt={SelectedItem:{tag:{CustomModelData:2}}}] at @s run function gun:double_bullet_pos
 execute as @a[scores={shot_gun=1,Bullets=1..},nbt={SelectedItem:{tag:{CustomModelData:3}}}] at @s run function gun:lmg_pos
-#execute as @a if entity @s[scores={shot_gun=1,Bullets=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] unless score @s judgement_senak matches 1 at @s run function gun:search_gun_pos
 execute as @a if entity @s[scores={shot_gun=1,Bullets=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] unless predicate system:is_sneak at @s run function gun:search_gun_pos
-#execute as @a[scores={shot_gun=1,Bullets=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] if score @s judgement_senak matches 1 at @s run function gun:search_gun_pos_sn
 execute as @a[scores={shot_gun=1,Bullets2=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] if predicate system:is_sneak at @s run function gun:search_gun_pos_sn
-#execute as @a[scores={shot_gun=1,Bullets=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] if score @s judgement_senak matches 1 at @s run scoreboard players set @s noglow_sn 2
 execute as @a[scores={shot_gun=1,Bullets2=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] if predicate system:is_sneak at @s run scoreboard players set @s noglow_sn 31
 execute as @a[scores={sneakcount=2,Bullets=1..},nbt={SelectedItem:{tag:{CustomModelData:512}}}] at @s run function gun:sniper_pos
 #execute as @a if entity @s[scores={shot_gun=1},nbt={Inventory:[{Slot:-106b,Count:1b,tag:{CustomModelData:4}}]}] unless predicate system:is_sneak at @s run effect give @s speed 2 50 true
