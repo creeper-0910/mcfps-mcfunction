@@ -10,5 +10,6 @@ execute as @a if entity @s[scores={shot_gun=1},nbt={SelectedItem:{tag:{CustomMod
 execute as @a if entity @s[scores={Charge_Search=5},nbt={SelectedItem:{tag:{CustomModelData:4}}}] unless predicate system:is_sneak at @s run tellraw @s {"text":"左手に持ちながらShift+右クリックでスペシャルスキルを発動"}
 playsound minecraft:entity.generic.explode master @a ~ ~ ~ 0.25 2 0
 playsound minecraft:block.fence_gate.open master @a ~ ~ ~ 0.5 1.5 0
+scoreboard players set @s GunCoolTime 5
 item modify entity @s weapon.mainhand gun:gun_bullet_nbt2
 item modify entity @s weapon.mainhand gun:gun_bullet_name/wallhacker
