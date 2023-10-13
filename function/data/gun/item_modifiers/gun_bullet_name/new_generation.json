@@ -1,0 +1,20 @@
+[
+	{
+		"function": "minecraft:set_name",
+		"entity": "this",
+		"name": [
+			{
+				"text": "New Generation   ["
+			},
+			{
+				"score": {
+					"name": "@s",
+					"objective": "Bullets"
+				}
+			},
+			{
+				"text": "]"
+			}
+		]
+	}
+]

@@ -46,7 +46,7 @@ execute as @e[tag=newt_close,scores={newt_timer=160..}] run kill @s
 #DirectX
 execute as @e[tag=ryujin] at @s run tp @s ^ ^ ^1.2
 execute as @e[tag=ryujin] at @s unless block ~ ~ ~ minecraft:air run kill @s
-execute as @e[tag=ryujin] at @s run damage @e[distance=..0.99,limit=1,type=!creeper] 4 system:shot
+execute as @e[tag=ryujin] at @s run damage @e[distance=..0.99,limit=1,type=!creeper] 4 magic
 
 #Wing
 execute as @a[scores={wing=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] at @s run tp @a[scores={wing=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] ^ ^1.5 ^1

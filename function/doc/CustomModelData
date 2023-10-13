@@ -3,6 +3,7 @@ carrot_on_a_stick 1-4
 2 -> anko_gun
 3 -> lmg
 4 -> wallhack
+5 -> New Generation
 
 warped_fungus_on_a_stick 1-4
 1 -> scout
@@ -19,3 +20,5 @@ lingering_potion 1-4
 2 -> newt
 3 -> bomb
 4 -> flashbang
+
+sea_lantern

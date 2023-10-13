@@ -1,8 +1,14 @@
+execute as @a run scoreboard players operation @s LastSelecting = @s Selecting
+execute as @a store result score @s Selecting run data get entity @s SelectedItemSlot
+
+# get bullet
 execute as @a[scores={shot_gun=1}] store result score @s Bullets run data get entity @s SelectedItem.tag.Bullets
 execute as @a[scores={sneakcount=2}] store result score @s Bullets run data get entity @s SelectedItem.tag.Bullets
+# gun
 execute as @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=0},nbt={SelectedItem:{tag:{CustomModelData:1}}}] at @s run function gun:bullet_pos
 execute as @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=0},nbt={SelectedItem:{tag:{CustomModelData:2}}}] at @s run function gun:double_bullet_pos
 execute as @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=0},nbt={SelectedItem:{tag:{CustomModelData:3}}}] at @s run function gun:lmg_pos
+execute as @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=0},nbt={SelectedItem:{tag:{CustomModelData:5}}}] at @s run function gun:new_gun_pos
 # wallhacker
 execute as @a[scores={shot_gun=1},nbt={SelectedItem:{tag:{CustomModelData:4}}}] store result score @s Bullets2 run data get entity @s SelectedItem.tag.Bullets2
 execute as @a if entity @s[scores={shot_gun=1,Bullets=1..,GunCoolTime=0},nbt={SelectedItem:{tag:{CustomModelData:4}}}] unless predicate system:is_sneak at @s run function gun:search_gun_pos
@@ -23,7 +29,7 @@ execute as @a[scores={sneakcount=2,Bullets=1..,GunCoolTime=1..}] at @s run plays
 #Search
 execute as @e[tag=ryujin] at @s run tp @s ^ ^ ^1.2
 execute as @e[tag=ryujin] at @s run effect give @e[distance=..2,limit=3,scores={Search=1..}] glowing 5 5
-execute as @e[tag=ryujin] at @s run damage @e[distance=..2,limit=1,type=!creeper,scores={Search=1..}] 4 system:shot
+execute as @e[tag=ryujin] at @s run damage @e[distance=..2,limit=1,type=!creeper,scores={Search=1..}] 4 magic
 execute as @e[tag=ryujin] at @s run scoreboard players add @s Search 1
 execute as @e[scores={Search=30..},tag=ryujin] at @s run kill @s
 #Search_sn
