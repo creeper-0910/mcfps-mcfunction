@@ -48,7 +48,7 @@ execute as @a if score @s TryReload2 matches 1.. run function gun:active_reload2
 # if bullet is 0, reload
 execute as @a if entity @s[scores={shot_gun=1,Bullets=0,GunCoolTime=0}] run function gun:reload
 execute as @a if entity @s[scores={shot_gun=1,Bullets2=0,GunCoolTime=0},nbt={SelectedItem:{tag:{CustomModelData:4}}}] run function gun:reload
-execute as @a if entity @s[scores={sneakcount=2,Bullets=0,GunCoolTime=0}] run function gun:reload
+execute as @a if entity @s[scores={sneakcount=2,Bullets=0,GunCoolTime=0},nbt={SelectedItem:{id:"minecraft:spyglass"}}] run function gun:reload
 
 scoreboard players remove @a[scores={noglow_sn=1..}] noglow_sn 1
 scoreboard players remove @a[scores={isjump=1..}] isjump 1
