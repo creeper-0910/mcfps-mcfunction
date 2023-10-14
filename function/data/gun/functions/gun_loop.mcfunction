@@ -1,6 +1,10 @@
 execute as @a run scoreboard players operation @s LastSelecting = @s Selecting
 execute as @a store result score @s Selecting run data get entity @s SelectedItemSlot
 
+# can't shot gun
+execute as @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=1..}] at @s run playsound minecraft:block.stone_button.click_on master @s ~ ~ ~
+execute as @a[scores={shot_gun=1,Bullets2=1..,GunCoolTime=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] if predicate system:is_sneak at @s run playsound minecraft:block.stone_button.click_on master @s ~ ~ ~
+execute as @a[scores={sneakcount=2,Bullets=1..,GunCoolTime=1..}] at @s run playsound minecraft:block.stone_button.click_on master @s ~ ~ ~
 # get bullet
 execute as @a[scores={shot_gun=1}] store result score @s Bullets run data get entity @s SelectedItem.tag.Bullets
 execute as @a[scores={sneakcount=2}] store result score @s Bullets run data get entity @s SelectedItem.tag.Bullets
@@ -21,10 +25,6 @@ execute as @a[scores={shot_gun=1,Charge_Search=5..,GunCoolTime=0},nbt={Inventory
 # sniper
 execute as @a[scores={sneakcount=2,Bullets=1..,GunCoolTime=0},nbt={SelectedItem:{tag:{CustomModelData:512}}}] at @s run function gun:sniper_pos
 execute as @a[scores={sneakcount=2,Bullets=1..,GunCoolTime=0},nbt={SelectedItem:{tag:{CustomModelData:513}}}] at @s run function gun:amr_pos
-# can't shot gun
-execute as @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=1..}] at @s run playsound minecraft:block.stone_button.click_on master @s ~ ~ ~
-execute as @a[scores={shot_gun=1,Bullets2=1..,GunCoolTime=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] at @s run playsound minecraft:block.stone_button.click_on master @s ~ ~ ~
-execute as @a[scores={sneakcount=2,Bullets=1..,GunCoolTime=1..}] at @s run playsound minecraft:block.stone_button.click_on master @s ~ ~ ~
 
 #Search
 execute as @e[tag=ryujin] at @s run tp @s ^ ^ ^1.2
