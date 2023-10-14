@@ -14,7 +14,8 @@ item modify entity @s[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{C
 item modify entity @s[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{CustomModelData:2}}}] weapon.mainhand gun:gun_bullet_name/anko_gun
 item modify entity @s[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{CustomModelData:3}}}] weapon.mainhand gun:gun_bullet_name/lmg
 item modify entity @s[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{CustomModelData:4}}}] weapon.mainhand gun:gun_bullet_name/wallhacker
-item modify entity @s[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{CustomModelData:4}}}] weapon.mainhand gun:gun_bullet_name/new_generation
+item modify entity @s[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{CustomModelData:4}}}] weapon.mainhand gun:gun_bullet_name/wallhacker
+item modify entity @s[nbt={SelectedItem:{id:"minecraft:carrot_on_a_stick",tag:{CustomModelData:5}}}] weapon.mainhand gun:gun_bullet_name/new_generation
 item modify entity @s[nbt={SelectedItem:{id:"minecraft:spyglass",tag:{CustomModelData:512}}}] weapon.mainhand gun:gun_bullet_name/sniper
 item modify entity @s[nbt={SelectedItem:{id:"minecraft:spyglass",tag:{CustomModelData:513}}}] weapon.mainhand gun:gun_bullet_name/amr
 execute at @s run playsound minecraft:block.chain.place master @s ~ ~ ~ 1 1
