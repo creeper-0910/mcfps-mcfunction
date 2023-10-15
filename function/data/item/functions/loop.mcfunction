@@ -16,8 +16,8 @@ execute as @e[tag=eye] at @s run function item:eye_tick
 execute as @a[scores={use_ender_eye=1..}] run function item:eye
 kill @e[type=minecraft:eye_of_ender]
 scoreboard players remove @a[scores={noglow=1..}] noglow 1
-execute at @e[tag=bombs,nbt={OnGround:true}] run summon creeper ~ ~ ~ {Fuse:1s,ignited:true}
 kill @e[tag=bombs,nbt={OnGround:true}]
+execute at @e[tag=bombs,nbt={OnGround:true}] run summon creeper ~ ~ ~ {Fuse:1s,ignited:true}
 
 # heal item
 execute as @a[scores={eat_count=10},nbt={SelectedItem:{tag:{CustomModelData:1}}}] at @s run playsound minecraft:entity.generic.eat player @s ~ ~ ~
