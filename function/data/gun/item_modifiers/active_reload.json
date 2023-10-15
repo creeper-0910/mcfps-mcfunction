@@ -25,6 +25,11 @@
 				"source": "Other.kusa",
 				"target": "kusa",
 				"op": "replace"
+			},
+			{
+				"source": "Other.Range",
+				"target": "Range",
+				"op": "replace"
 			}
 		]
 	}
