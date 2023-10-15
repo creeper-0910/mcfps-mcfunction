@@ -1,11 +1,6 @@
 execute as @a run scoreboard players operation @s LastSelecting = @s Selecting
 execute as @a store result score @s Selecting run data get entity @s SelectedItemSlot
 
-# if bullet is 0, reload
-execute as @a if entity @s[scores={shot_gun=1,Bullets=0,GunCoolTime=0}] run function gun:reload
-execute as @a if entity @s[scores={shot_gun=1,Bullets2=0,GunCoolTime=0},nbt={SelectedItem:{tag:{CustomModelData:4}}}] run function gun:reload
-execute as @a if entity @s[scores={sneakcount=2,Bullets=0,GunCoolTime=0},nbt={SelectedItem:{id:"minecraft:spyglass"}}] run function gun:reload
-
 # can't shot gun
 execute as @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=1..}] at @s run playsound minecraft:block.stone_button.click_on master @s ~ ~ ~
 execute as @a[scores={shot_gun=1,Bullets2=1..,GunCoolTime=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] if predicate system:is_sneak at @s run playsound minecraft:block.stone_button.click_on master @s ~ ~ ~
@@ -49,6 +44,11 @@ execute as @e[scores={Search_sn=10..},tag=ryujin_sn] at @s run kill @s
 execute as @a if entity @s[scores={on=1..20},nbt={Inventory:[{Slot:-106b,Count:1b,tag:{CustomModelData:4}}]}] at @s run function gun:search_gun_pos
 execute as @a if entity @s[scores={on=1..},nbt={Inventory:[{Slot:-106b,Count:1b,tag:{CustomModelData:4}}]}] at @s run scoreboard players add @s on 1
 execute as @a if entity @s[scores={on=20..},nbt={Inventory:[{Slot:-106b,Count:1b,tag:{CustomModelData:4}}]}] at @s run scoreboard players reset @s on
+
+# if bullet is 0, reload
+execute as @a if entity @s[scores={shot_gun=1,Bullets=0,GunCoolTime=0}] run function gun:reload
+execute as @a if entity @s[scores={shot_gun=1,Bullets2=0,GunCoolTime=0},nbt={SelectedItem:{tag:{CustomModelData:4}}}] run function gun:reload
+execute as @a if entity @s[scores={sneakcount=2,Bullets=0,GunCoolTime=0},nbt={SelectedItem:{id:"minecraft:spyglass"}}] run function gun:reload
 
 execute as @a if score @s TryReload1 matches 1.. run function gun:active_reload
 execute as @a if score @s TryReload2 matches 1.. run function gun:active_reload2
