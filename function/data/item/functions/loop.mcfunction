@@ -24,7 +24,7 @@ execute as @a[scores={eat_count=30},nbt={SelectedItem:{tag:{CustomModelData:1}}}
 execute as @a[scores={eat_count=40},nbt={SelectedItem:{tag:{CustomModelData:1}}}] at @s run playsound minecraft:entity.generic.eat player @s ~ ~ ~
 execute as @a[scores={eat_count=50},nbt={SelectedItem:{tag:{CustomModelData:1}}}] at @s run playsound minecraft:entity.generic.eat player @s ~ ~ ~
 execute as @a[scores={eat_count=60},nbt={SelectedItem:{tag:{CustomModelData:1}}}] at @s run playsound minecraft:entity.generic.eat player @s ~ ~ ~
-effect give @a[scores={eat_count=60..},nbt={SelectedItem:{tag:{CustomModelData:1}}}] instant_health 1 0 true
+effect give @a[scores={eat_count=60..},nbt={SelectedItem:{tag:{CustomModelData:1}}}] instant_health 1 1 true
 clear @a[scores={eat_count=60..},nbt={SelectedItem:{tag:{CustomModelData:1}}}] mushroom_stew{heal:true} 1
 # これがtrue -> まだ持ってるから継続回復可能に
 scoreboard players set @a[scores={eat_count=60..},nbt={SelectedItem:{tag:{CustomModelData:1}}}] eat_count 0
