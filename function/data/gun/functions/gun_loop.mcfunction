@@ -1,6 +1,11 @@
 execute as @a run scoreboard players operation @s LastSelecting = @s Selecting
 execute as @a store result score @s Selecting run data get entity @s SelectedItemSlot
 
+# if bullet is 0, reload
+execute as @a if entity @s[scores={shot_gun=1,Bullets=0,GunCoolTime=0}] run function gun:reload
+execute as @a if entity @s[scores={shot_gun=1,Bullets2=0,GunCoolTime=0},nbt={SelectedItem:{tag:{CustomModelData:4}}}] run function gun:reload
+execute as @a if entity @s[scores={sneakcount=2,Bullets=0,GunCoolTime=0},nbt={SelectedItem:{id:"minecraft:spyglass"}}] run function gun:reload
+
 # can't shot gun
 execute as @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=1..}] at @s run playsound minecraft:block.stone_button.click_on master @s ~ ~ ~
 execute as @a[scores={shot_gun=1,Bullets2=1..,GunCoolTime=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] if predicate system:is_sneak at @s run playsound minecraft:block.stone_button.click_on master @s ~ ~ ~
@@ -30,8 +35,8 @@ execute as @a[scores={sneakcount=2,Bullets=1..,GunCoolTime=0},nbt={SelectedItem:
 execute as @e[tag=ryujin] at @s run tp @s ^ ^ ^1.2
 #execute as @e[tag=ryujin] at @s run effect give @e[distance=..2,limit=3,scores={Search=1..}] glowing 5 5
 #execute as @e[tag=ryujin] at @s run damage @e[distance=..2,limit=1,type=!creeper,scores={Search=1..},tag=!ryujin] 4 magic
-execute at @e[tag=ryujin] positioned ~-0.6 ~-0.1 ~ as @e[dx=0.1,dy=0.1,dz=0.2,tag=!test_bullet,type=#bullet_hit] unless score @s player_id = @e[tag=ryujin,sort=nearest,limit=1] pid run effect give @s minecraft:glowing 5 5 true
-execute at @e[tag=ryujin] positioned ~-0.6 ~-0.1 ~ as @e[dx=0.1,dy=0.1,dz=0.2,tag=!test_bullet,type=#bullet_hit] unless score @s player_id = @e[tag=ryujin,sort=nearest,limit=1] pid run damage @s 4 magic
+execute at @e[tag=ryujin] positioned ~-0.6 ~-0.1 ~ as @e[dx=0.1,dy=0.1,dz=0.2,tag=!test_bullet,type=#bullet_hit] unless score @s playerid = @e[tag=ryujin,sort=nearest,limit=1] pid run effect give @s minecraft:glowing 5 5 true
+execute at @e[tag=ryujin] positioned ~-0.6 ~-0.1 ~ as @e[dx=0.1,dy=0.1,dz=0.2,tag=!test_bullet,type=#bullet_hit] unless score @s playerid = @e[tag=ryujin,sort=nearest,limit=1] pid run damage @s 4 magic
 scoreboard players add @e[tag=ryujin] Search 1
 kill @e[scores={Search=30..},tag=ryujin]
 #Search_sn
@@ -47,10 +52,6 @@ execute as @a if entity @s[scores={on=20..},nbt={Inventory:[{Slot:-106b,Count:1b
 
 execute as @a if score @s TryReload1 matches 1.. run function gun:active_reload
 execute as @a if score @s TryReload2 matches 1.. run function gun:active_reload2
-# if bullet is 0, reload
-execute as @a if entity @s[scores={shot_gun=1,Bullets=0,GunCoolTime=0}] run function gun:reload
-execute as @a if entity @s[scores={shot_gun=1,Bullets2=0,GunCoolTime=0},nbt={SelectedItem:{tag:{CustomModelData:4}}}] run function gun:reload
-execute as @a if entity @s[scores={sneakcount=2,Bullets=0,GunCoolTime=0},nbt={SelectedItem:{id:"minecraft:spyglass"}}] run function gun:reload
 
 scoreboard players remove @a[scores={noglow_sn=1..}] noglow_sn 1
 scoreboard players remove @a[scores={isjump=1..}] isjump 1
