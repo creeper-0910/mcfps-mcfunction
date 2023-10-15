@@ -28,8 +28,10 @@ execute as @a[scores={sneakcount=2,Bullets=1..,GunCoolTime=0},nbt={SelectedItem:
 
 #Search
 execute as @e[tag=ryujin] at @s run tp @s ^ ^ ^1.2
-execute as @e[tag=ryujin] at @s run effect give @e[distance=..2,limit=3,scores={Search=1..}] glowing 5 5
-execute as @e[tag=ryujin] at @s run damage @e[distance=..2,limit=1,type=!creeper,scores={Search=1..},tag=!ryujin] 4 magic
+#execute as @e[tag=ryujin] at @s run effect give @e[distance=..2,limit=3,scores={Search=1..}] glowing 5 5
+#execute as @e[tag=ryujin] at @s run damage @e[distance=..2,limit=1,type=!creeper,scores={Search=1..},tag=!ryujin] 4 magic
+execute at @e[tag=ryujin] positioned ~-0.6 ~-0.1 ~ as @e[dx=0.1,dy=0.1,dz=0.2,tag=!test_bullet,type=#bullet_hit] run effect give @s minecraft:glowing 5 5 true
+execute at @e[tag=ryujin] positioned ~-0.6 ~-0.1 ~ as @e[dx=0.1,dy=0.1,dz=0.2,tag=!test_bullet,type=#bullet_hit] run damage @s 4 magic
 scoreboard players add @e[tag=ryujin] Search 1
 kill @e[scores={Search=30..},tag=ryujin]
 #Search_sn

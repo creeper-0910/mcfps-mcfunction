@@ -6,7 +6,8 @@ execute as @e[tag=bullet_] run function gun:bullet_move_new
 kill @e[tag=bullet_]
 
 function gun:select_enemy
-execute as @e[tag=Enemy] run function gun:gun_hit
+# 60 = 80 * 0.75
+execute as @e[tag=Enemy,distance=..60] run function gun:gun_hit
 execute as @e[tag=HitterT] run damage @s 3 system:shot by @p[tag=Shooter]
 execute as @e[tag=HitterT] at @s run playsound entity.experience_orb.pickup player @s ~ ~ ~ 5
 execute if entity @e[tag=HitterT] run playsound block.glass.break player @s ~ ~ ~ 5
