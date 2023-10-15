@@ -18,13 +18,13 @@ kill @e[type=minecraft:eye_of_ender]
 scoreboard players remove @a[scores={noglow=1..}] noglow 1
 
 # heal item
-playsound minecraft:entity.generic.eat player @a[scores={eat_count=10},nbt={SelectedItem:{tag:{CustomModelData:1}}}]
-playsound minecraft:entity.generic.eat player @a[scores={eat_count=20},nbt={SelectedItem:{tag:{CustomModelData:1}}}]
-playsound minecraft:entity.generic.eat player @a[scores={eat_count=30},nbt={SelectedItem:{tag:{CustomModelData:1}}}]
-playsound minecraft:entity.generic.eat player @a[scores={eat_count=40},nbt={SelectedItem:{tag:{CustomModelData:1}}}]
-playsound minecraft:entity.generic.eat player @a[scores={eat_count=50},nbt={SelectedItem:{tag:{CustomModelData:1}}}]
-playsound minecraft:entity.generic.eat player @a[scores={eat_count=60},nbt={SelectedItem:{tag:{CustomModelData:1}}}]
-effect give @a[scores={eat_count=60..},nbt={SelectedItem:{tag:{CustomModelData:1}}}] instant_health 1 1 true
+execute as @a[scores={eat_count=10},nbt={SelectedItem:{tag:{CustomModelData:1}}}] at @s run playsound minecraft:entity.generic.eat player @s ~ ~ ~
+execute as @a[scores={eat_count=20},nbt={SelectedItem:{tag:{CustomModelData:1}}}] at @s run playsound minecraft:entity.generic.eat player @s ~ ~ ~
+execute as @a[scores={eat_count=30},nbt={SelectedItem:{tag:{CustomModelData:1}}}] at @s run playsound minecraft:entity.generic.eat player @s ~ ~ ~
+execute as @a[scores={eat_count=40},nbt={SelectedItem:{tag:{CustomModelData:1}}}] at @s run playsound minecraft:entity.generic.eat player @s ~ ~ ~
+execute as @a[scores={eat_count=50},nbt={SelectedItem:{tag:{CustomModelData:1}}}] at @s run playsound minecraft:entity.generic.eat player @s ~ ~ ~
+execute as @a[scores={eat_count=60},nbt={SelectedItem:{tag:{CustomModelData:1}}}] at @s run playsound minecraft:entity.generic.eat player @s ~ ~ ~
+effect give @a[scores={eat_count=60..},nbt={SelectedItem:{tag:{CustomModelData:1}}}] instant_health 1 0 true
 clear @a[scores={eat_count=60..},nbt={SelectedItem:{tag:{CustomModelData:1}}}] mushroom_stew{heal:true} 1
 # これがtrue -> まだ持ってるから継続回復可能に
 scoreboard players set @a[scores={eat_count=60..},nbt={SelectedItem:{tag:{CustomModelData:1}}}] eat_count 0
