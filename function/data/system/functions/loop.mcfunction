@@ -5,3 +5,5 @@ execute as @e[tag=pylon_head] at @s run particle glow_squid_ink ~ ~ ~
 
 execute at @e[tag=py,nbt={OnGround:true}] run function system:placepylon
 kill @e[tag=py,nbt={OnGround:true}]
+
+effect give @a saturation infinite 0 true

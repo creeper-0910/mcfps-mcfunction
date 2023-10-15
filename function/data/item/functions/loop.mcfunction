@@ -17,6 +17,18 @@ execute as @a[scores={use_ender_eye=1..}] run function item:eye
 kill @e[type=minecraft:eye_of_ender]
 scoreboard players remove @a[scores={noglow=1..}] noglow 1
 
+# heal item
+playsound minecraft:entity.generic.eat player @a[scores={eat_count=10},nbt={SelectedItem:{tag:{CustomModelData:1}}}]
+playsound minecraft:entity.generic.eat player @a[scores={eat_count=20},nbt={SelectedItem:{tag:{CustomModelData:1}}}]
+playsound minecraft:entity.generic.eat player @a[scores={eat_count=30},nbt={SelectedItem:{tag:{CustomModelData:1}}}]
+playsound minecraft:entity.generic.eat player @a[scores={eat_count=40},nbt={SelectedItem:{tag:{CustomModelData:1}}}]
+playsound minecraft:entity.generic.eat player @a[scores={eat_count=50},nbt={SelectedItem:{tag:{CustomModelData:1}}}]
+playsound minecraft:entity.generic.eat player @a[scores={eat_count=60},nbt={SelectedItem:{tag:{CustomModelData:1}}}]
+effect give @a[scores={eat_count=60..},nbt={SelectedItem:{tag:{CustomModelData:1}}}] instant_health 1 1 true
+clear @a[scores={eat_count=60..},nbt={SelectedItem:{tag:{CustomModelData:1}}}] mushroom_stew{heal:true} 1
+# これがtrue -> まだ持ってるから継続回復可能に
+scoreboard players set @a[scores={eat_count=60..},nbt={SelectedItem:{tag:{CustomModelData:1}}}] eat_count 0
+
 scoreboard players reset @a[scores={use_ender_eye=1..}] use_ender_eye
 
 scoreboard players add @e[tag=FlashBang] flashbang_timer 1
