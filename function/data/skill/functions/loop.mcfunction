@@ -51,10 +51,10 @@ execute as @e[tag=ryujin] at @s unless block ~ ~ ~ minecraft:air run kill @s
 execute as @e[tag=ryujin] at @s run damage @e[distance=..0.99,limit=1,type=!creeper] 4 magic
 
 #Wing
-execute as @a[scores={wing=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] at @s run tp @a[scores={wing=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] ^ ^1.5 ^1
+execute as @a[scores={wing=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] at @s run tp @s ^ ^1.5 ^1
 execute as @a[scores={wing=1..}] as @s run scoreboard players add @s wing 1
 execute as @a[scores={wing=10..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] at @s run effect give @s slow_falling 1 1
-execute as @a[scores={wing=10..}] as @s run scoreboard players reset @s
+execute as @a[scores={wing=10..}] as @s run scoreboard players reset @s wing
 
 #bat_bomb
 execute if entity @e[tag=bat_bomb,scores={timer=200..}] at @e[tag=bat_bomb] run summon creeper ~ ~ ~ {NoGravity:true,Fuse:1s,ignited:true}
