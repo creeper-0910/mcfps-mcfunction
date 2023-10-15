@@ -4,6 +4,8 @@ carrot_on_a_stick 1-4
 3 -> lmg
 4 -> wallhack
 5 -> New Generation
+6 -> SKS
+7 -> extermina memoria
 
 warped_fungus_on_a_stick 1-4
 1 -> scout
@@ -11,7 +13,8 @@ warped_fungus_on_a_stick 1-4
 3 -> x
 4 -> wing
 5 -> bat_bomb
-5 -> rapido
+6 -> trapmine
+7 -> rapido
 
 spyglass 512
 512 -> sniper

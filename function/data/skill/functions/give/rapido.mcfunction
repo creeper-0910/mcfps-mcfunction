@@ -1,1 +1,1 @@
-give @s minecraft:warped_fungus_on_a_stick{CustomModelData:6,display:{Name:'"ラピド"'}}
+give @s minecraft:warped_fungus_on_a_stick{CustomModelData:7,display:{Name:'"ラピド"'}}
