@@ -47,10 +47,10 @@ execute as @e[tag=newt,scores={newt_timer=120..}] run tag @s add newt_close
 execute as @e[tag=newt,scores={newt_timer=120..},tag=newt_close] run tag @s remove newt
 execute as @e[tag=newt_close,scores={newt_timer=160..}] run kill @s
 
-#DirectX
-execute as @e[tag=ryujin] at @s run tp @s ^ ^ ^1.2
-execute as @e[tag=ryujin] at @s unless block ~ ~ ~ minecraft:air run kill @s
-execute as @e[tag=ryujin] at @s run damage @e[distance=..0.99,limit=1,type=!creeper] 4 magic
+#DirectX 仕様変更でめんどくさいのでgun_loopと同じ仕様に変更
+#execute as @e[tag=ryujin] at @s run tp @s ^ ^ ^1.2
+#execute as @e[tag=ryujin] at @s unless block ~ ~ ~ minecraft:air run kill @s
+#execute as @e[tag=ryujin] at @s run damage @e[distance=..0.99,limit=1,type=!creeper] 4 magic
 
 #Wing
 execute as @a[scores={wing=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] at @s run tp @s ^ ^1.5 ^1
