@@ -12,7 +12,7 @@ execute as @e[tag=HitterT] run damage @s 3 system:shot by @p[tag=Shooter]
 execute as @e[tag=HitterT] at @s run playsound entity.experience_orb.pickup player @s ~ ~ ~ 1
 execute if entity @e[tag=HitterT] run playsound block.glass.break player @s ~ ~ ~ 5
 tag @s remove Shooter
-tag @e[tag=Enemy,tag=HitterT] remove HitterT
+tag @e[tag=HitterT] remove HitterT
 
 playsound minecraft:entity.generic.explode master @a ~ ~ ~ 0.25 1.8 0
 playsound minecraft:block.fence_gate.open master @a ~ ~ ~ 0.5 1.5 0
