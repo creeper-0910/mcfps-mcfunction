@@ -15,6 +15,7 @@ warped_fungus_on_a_stick 1-4
 5 -> bat_bomb
 6 -> trapmine
 7 -> rapido
+8 -> pin
 
 spyglass 512
 512 -> sniper
@@ -27,3 +28,7 @@ lingering_potion 1-4
 4 -> flashbang
 
 sea_lantern
+
+mushroo_stew
+1 -> heal kit
+2 -> giant heal kit

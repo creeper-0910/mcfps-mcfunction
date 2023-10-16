@@ -3,6 +3,9 @@ scoreboard players reset @a[scores={shot_gun=1..}] shot_gun
 scoreboard players reset @a[scores={TryReload1=1..}] TryReload1
 scoreboard players reset @a[scores={TryReload2=1..}] TryReload2
 
+# for item
+scoreboard players reset @a[scores={use_ender_eye=1..}] use_ender_eye
+
 # for skill
 scoreboard players reset @a[scores={testfor=1..}] testfor
 

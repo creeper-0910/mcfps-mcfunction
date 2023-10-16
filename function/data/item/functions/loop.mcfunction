@@ -47,7 +47,7 @@ clear @a[scores={eat_count=120..},nbt={SelectedItem:{tag:{CustomModelData:2}}}] 
 # これがtrue -> まだ持ってるから継続回復可能に
 scoreboard players set @a[scores={eat_count=120..},nbt={SelectedItem:{tag:{CustomModelData:2}}}] eat_count 0
 
-scoreboard players reset @a[scores={use_ender_eye=1..}] use_ender_eye
+execute as @a[scores={testfor=1..},nbt={SelectedItem:{tag:{CustomModelData:8}}}] at @s run function system:pin
 
 scoreboard players add @e[tag=FlashBang] flashbang_timer 1
 scoreboard players add @e[tag=FlashPlayer] flashbang_timer 1
