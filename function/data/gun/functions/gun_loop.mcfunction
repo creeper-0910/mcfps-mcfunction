@@ -14,6 +14,7 @@ execute as @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=0},nbt={SelectedItem:{t
 execute as @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=0},nbt={SelectedItem:{tag:{CustomModelData:3}}}] at @s run function gun:lmg_pos
 execute as @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=0},nbt={SelectedItem:{tag:{CustomModelData:5}}}] at @s run function gun:new_gun_pos
 execute as @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=0},nbt={SelectedItem:{tag:{CustomModelData:6}}}] at @s run function gun:sks_pos
+execute as @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=0},nbt={SelectedItem:{tag:{CustomModelData:7}}}] at @s run function gun:ext_memoria_pos
 # wallhacker
 execute as @a[scores={shot_gun=1},nbt={SelectedItem:{tag:{CustomModelData:4}}}] store result score @s Bullets2 run data get entity @s SelectedItem.tag.Bullets2
 execute as @a if entity @s[scores={shot_gun=1,Bullets=1..,GunCoolTime=0},nbt={SelectedItem:{tag:{CustomModelData:4}}}] unless predicate system:is_sneak at @s run function gun:search_gun_pos
