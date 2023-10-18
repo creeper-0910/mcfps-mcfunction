@@ -1,1 +1,1 @@
-give @s minecraft:spyglass{display:{Name:'{"text":"Anti Material Rifle   [2]"}'},CustomModelData:513,Bullets:2,Gun:true} 1
+give @s minecraft:spyglass{display:{Name:'{"text":"Anti Material Rifle   [2]"}'},CustomModelData:513,Bullets:2,Gun:true,Type:"SR"} 1
