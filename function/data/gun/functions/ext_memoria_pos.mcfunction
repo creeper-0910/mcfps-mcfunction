@@ -26,9 +26,10 @@ execute as @s at @s run tp @s ~ ~ ~ ~ ~-0.3
 playsound minecraft:entity.generic.explode master @a ~ ~ ~ 0.25 1.8 0
 playsound minecraft:block.fence_gate.open master @a ~ ~ ~ 0.5 1.5 0
 
-scoreboard players remove @s Bullets 2
+scoreboard players remove @s Bullets 1
 execute store result storage minecraft:data Bullets double 1 run scoreboard players get @s Bullets
 item modify entity @s weapon.mainhand gun:gun_bullet_nbt
 item modify entity @s weapon.mainhand gun:gun_bullet_name/ext_memoria
+scoreboard players set @s[scores={GunRepeat=3}] GunCoolTime 3
 
 tag @e[tag=Enemy] remove Enemy

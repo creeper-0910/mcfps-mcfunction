@@ -1,20 +1,27 @@
 execute as @a run scoreboard players operation @s LastSelecting = @s Selecting
 execute as @a store result score @s Selecting run data get entity @s SelectedItemSlot
 
+# get bullet
+execute as @a[scores={shot_gun=1}] store result score @s Bullets run data get entity @s SelectedItem.tag.Bullets
+execute as @a[scores={sneakcount=2}] store result score @s Bullets run data get entity @s SelectedItem.tag.Bullets
 # can't shot gun
 execute as @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=1..}] at @s run playsound minecraft:block.stone_button.click_on master @s ~ ~ ~
 execute as @a[scores={shot_gun=1,Bullets2=1..,GunCoolTime=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] if predicate system:is_sneak at @s run playsound minecraft:block.stone_button.click_on master @s ~ ~ ~
 execute as @a[scores={sneakcount=2,Bullets=1..,GunCoolTime=1..}] at @s run playsound minecraft:block.stone_button.click_on master @s ~ ~ ~
-# get bullet
-execute as @a[scores={shot_gun=1}] store result score @s Bullets run data get entity @s SelectedItem.tag.Bullets
-execute as @a[scores={sneakcount=2}] store result score @s Bullets run data get entity @s SelectedItem.tag.Bullets
+
+scoreboard players add @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=0},nbt={SelectedItem:{tag:{Gun:true}}}] GunRepeat 1
+scoreboard players reset @a[scores={GunCoolTime=1..}] GunRepeat
+scoreboard players reset @a[scores={Bullets=0}] GunRepeat
+scoreboard players reset @a[scores={shot_gun=0}] GunRepeat
+
 # gun
 execute as @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=0},nbt={SelectedItem:{tag:{CustomModelData:1}}}] at @s run function gun:bullet_pos
 execute as @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=0},nbt={SelectedItem:{tag:{CustomModelData:2}}}] at @s run function gun:double_bullet_pos
 execute as @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=0},nbt={SelectedItem:{tag:{CustomModelData:3}}}] at @s run function gun:lmg_pos
 execute as @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=0},nbt={SelectedItem:{tag:{CustomModelData:5}}}] at @s run function gun:new_gun_pos
 execute as @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=0},nbt={SelectedItem:{tag:{CustomModelData:6}}}] at @s run function gun:sks_pos
-execute as @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=0},nbt={SelectedItem:{tag:{CustomModelData:7}}}] at @s run function gun:ext_memoria_pos
+execute as @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=0, GunRepeat=1},nbt={SelectedItem:{tag:{CustomModelData:7}}}] at @s run function gun:ext_memoria_pos
+execute as @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=0, GunRepeat=3},nbt={SelectedItem:{tag:{CustomModelData:7}}}] at @s run function gun:ext_memoria_pos
 # wallhacker
 execute as @a[scores={shot_gun=1},nbt={SelectedItem:{tag:{CustomModelData:4}}}] store result score @s Bullets2 run data get entity @s SelectedItem.tag.Bullets2
 execute as @a if entity @s[scores={shot_gun=1,Bullets=1..,GunCoolTime=0},nbt={SelectedItem:{tag:{CustomModelData:4}}}] unless predicate system:is_sneak at @s run function gun:search_gun_pos
