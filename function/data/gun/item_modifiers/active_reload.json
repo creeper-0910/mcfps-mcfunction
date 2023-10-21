@@ -30,6 +30,11 @@
 				"source": "Other.Range",
 				"target": "Range",
 				"op": "replace"
+			},
+			{
+				"source": "Other.Gun",
+				"target": "Gun",
+				"op": "replace"
 			}
 		]
 	}
