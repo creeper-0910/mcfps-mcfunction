@@ -12,7 +12,7 @@ execute as @a[scores={sneakcount=2,Bullets=1..,GunCoolTime=1..}] at @s run plays
 scoreboard players add @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=0},nbt={SelectedItem:{tag:{Gun:true}}}] GunRepeat 1
 scoreboard players reset @a[scores={GunCoolTime=1..}] GunRepeat
 scoreboard players reset @a[scores={Bullets=0}] GunRepeat
-execute as @a unless score @s shot_gun = @s shot_gun run scoreboard players reset @s GunRepeat
+scoreboard players reset @a[scores={shot_gun=0}] GunRepeat
 
 # gun
 execute as @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=0},nbt={SelectedItem:{tag:{CustomModelData:1}}}] at @s run function gun:bullet_pos

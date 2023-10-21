@@ -1,5 +1,5 @@
 # for gun
-scoreboard players reset @a[scores={shot_gun=1..}] shot_gun
+scoreboard players set @a[scores={shot_gun=1..}] shot_gun 0
 scoreboard players reset @a[scores={TryReload1=1..}] TryReload1
 scoreboard players reset @a[scores={TryReload2=1..}] TryReload2
 
