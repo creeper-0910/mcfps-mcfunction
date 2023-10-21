@@ -5,13 +5,13 @@ data modify storage forward_spreader: Distance set value 5.0f
 execute store result score @s Accurate run data get entity @s SelectedItem.tag.Accurate
 execute store result storage forward_spreader: Spread float 0.01 run scoreboard players get @s Accurate
 execute at @s as @e[tag=SpreadMarker,sort=nearest,limit=1] run function forward_spreader:api/circle
-execute at @s facing entity @e[tag=SpreadMarker,sort=nearest,limit=1] feet anchored eyes positioned ^ ^ ^5 run particle end_rod
+#execute at @s facing entity @e[tag=SpreadMarker,sort=nearest,limit=1] feet anchored eyes positioned ^ ^ ^5 run particle end_rod
 
 execute at @s run summon marker ~ ~ ~ {Tags:["bullet_"]}
-execute at @s run tp @e[tag=bullet_] ~ ~1.6 ~
-execute as @e[tag=bullet_] at @s facing entity @e[tag=SpreadMarker,sort=nearest,limit=1] feet anchored eyes run tp @s ~ ~ ~ ~ ~
+execute at @s run tp @e[tag=bullet_] ~ ~1.6 ~ ~ ~
+#execute as @e[tag=bullet_] at @s facing entity @e[tag=SpreadMarker,sort=nearest,limit=1] feet anchored eyes run tp @s ~ ~ ~ ~ ~
 execute store result score #system Range run data get entity @s SelectedItem.tag.Range
-execute as @e[tag=bullet_] run function gun:bullet_move_new
+execute as @e[tag=bullet_] at @s facing entity @e[tag=SpreadMarker,sort=nearest,limit=1] feet anchored eyes run function gun:bullet_move_new
 kill @e[tag=bullet_]
 
 execute facing entity @e[tag=SpreadMarker,sort=nearest,limit=1] feet anchored eyes run function gun:select_enemy
