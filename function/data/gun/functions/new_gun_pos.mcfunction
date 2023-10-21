@@ -1,7 +1,7 @@
 tag @s add Shooter
 
 summon armor_stand ~ ~ ~ {Tags:["SpreadMarker"]}
-data modify storage forward_spreader: Ditance set value 5.0f
+data modify storage forward_spreader: Distance set value 5.0f
 execute store result score @s Accurate run data get entity @s SelectedItem.tag.Accurate
 execute store result storage forward_spreader: Spread float 0.01 run scoreboard players get @s Accurate
 execute at @s as @e[tag=SpreadMarker,sort=nearest,limit=1] run function forward_spreader:api/circle
