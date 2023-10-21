@@ -1,5 +1,5 @@
 scoreboard objectives add Charge_Search dummy
-execute at @s run summon item_display ^ ^ ^1 {Tags:["ryujin","init_ryujin_no_ken_wo_kurae"],item:{id:"minecraft:sea_lantern",Count:1,tag:{CustomModelData:12}},transformation:[-0.0000f,0.0000f,0.0625f,0.0000f,0.0625f,-0.0000f,0.0000f,-0.0311f,0.0000f,0.0625f,-0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,1.0000f]}
+execute at @s run summon item_display ^ ^ ^1 {Tags:["ryujin","init_ryujin_no_ken_wo_kurae"],item:{id:"minecraft:sea_lantern",Count:1,tag:{CustomModelData:12}},transformation:[0.0000f,0.0000f,0.0625f,0.0000f,0.0625f,-0.0000f,0.0000f,-0.1390f,0.0000f,0.0625f,-0.0000f,0.0000f,0.0000f,0.0000f,0.0000f,1.0000f]}
 execute at @s run tp @e[tag=init_ryujin_no_ken_wo_kurae] ~ ~1.8 ~ ~ ~
 execute at @s run scoreboard players operation @e[tag=init_ryujin_no_ken_wo_kurae,tag=ryujin,sort=nearest,limit=1] pid = @s playerid
 tag @e[tag=ryujin,tag=init_ryujin_no_ken_wo_kurae] remove init_ryujin_no_ken_wo_kurae
