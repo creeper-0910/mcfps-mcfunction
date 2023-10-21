@@ -1,6 +1,6 @@
 tag @s add Shooter
 
-summon armor_stand ~ ~ ~ {Tags:["SpreadMarker"]}
+summon marker ~ ~ ~ {Tags:["SpreadMarker"]}
 data modify storage forward_spreader: Distance set value 5.0f
 execute store result score @s Accurate run data get entity @s SelectedItem.tag.Accurate
 execute store result storage forward_spreader: Spread float 0.01 run scoreboard players get @s Accurate
@@ -22,7 +22,7 @@ execute if entity @e[tag=HitterT] run playsound block.glass.break player @s ~ ~ 
 tag @s remove Shooter
 tag @e[tag=HitterT] remove HitterT
 
-#kill @e[tag=SpreadMarker,sort=nearest,limit=1]
+kill @e[tag=SpreadMarker,sort=nearest,limit=1]
 
 playsound minecraft:entity.generic.explode master @a ~ ~ ~ 0.25 1.8 0
 playsound minecraft:block.fence_gate.open master @a ~ ~ ~ 0.5 1.5 0
