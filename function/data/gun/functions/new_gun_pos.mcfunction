@@ -1,4 +1,11 @@
 tag @s add Shooter
+
+execute at @s run summon marker ~ ~ ~ {Tags:["SpreadMarker"]}
+data modify storage forward_spreader: Ditance set value 5.0f
+execute store result storage forward_spreader: Spread float 0.01 run data get entity @s SelectedItem.tag.Accurate
+execute at @s as @e[tag=SpreadMarker,sort=nearest,limit=1] run function forward_spreader:api/circle
+execute facing entity @e[tag=SpreadMarker,sort=nearest,limit=1] feet anchored eyes positioned ^ ^ ^5 run particle end_rod
+
 execute at @s run summon marker ~ ~ ~ {Tags:["bullet_"]}
 execute at @s run tp @e[tag=bullet_] ~ ~1.6 ~ ~ ~
 execute store result score #system Range run data get entity @s SelectedItem.tag.Range
