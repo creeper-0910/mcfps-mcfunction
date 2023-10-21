@@ -7,13 +7,14 @@ execute store result storage forward_spreader: Spread float 0.01 run scoreboard 
 execute at @s as @e[tag=SpreadMarker,sort=nearest,limit=1] run function forward_spreader:api/circle
 execute at @s facing entity @e[tag=SpreadMarker,sort=nearest,limit=1] feet anchored eyes positioned ^ ^ ^5 run particle end_rod
 
-#execute at @s run summon marker ~ ~ ~ {Tags:["bullet_"]}
-#execute at @s run tp @e[tag=bullet_] ~ ~1.6 ~ ~ ~
-#execute store result score #system Range run data get entity @s SelectedItem.tag.Range
-#execute as @e[tag=bullet_] run function gun:bullet_move_new
-#kill @e[tag=bullet_]
+execute at @s run summon marker ~ ~ ~ {Tags:["bullet_"]}
+execute at @s run tp @e[tag=bullet_] ~ ~1.6 ~
+execute as @e[tag=bullet_] at @s facing entity @e[tag=SpreadMarker,sort=nearest,limit=1] feet anchored eyes run tp @s ~ ~ ~ ~ ~
+execute store result score #system Range run data get entity @s SelectedItem.tag.Range
+execute as @e[tag=bullet_] run function gun:bullet_move_new
+kill @e[tag=bullet_]
 
-function gun:select_enemy
+execute facing entity @e[tag=SpreadMarker,sort=nearest,limit=1] feet anchored eyes run function gun:select_enemy
 # 60 = 80 * 0.75
 execute as @e[tag=Enemy,distance=..60] run function gun:gun_hit
 execute as @e[tag=HitterT] run damage @s 3 system:shot by @p[tag=Shooter]

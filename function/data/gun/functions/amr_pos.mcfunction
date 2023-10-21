@@ -1,7 +1,7 @@
 tag @s add Shooter
 execute at @s run summon area_effect_cloud ~ ~ ~ {Tags:["bullet_amr"]}
 tp @e[tag=bullet_amr] ^ ^ ^-0.001 facing entity @s
-tp @e[tag=bullet_amr] ~ ~1.6 ~
+tp @e[tag=bullet_amr] ~ ~1.4 ~
 execute as @e[tag=bullet_amr] at @s run function gun:bullet_move_amr
 kill @e[tag=bullet_amr]
 
