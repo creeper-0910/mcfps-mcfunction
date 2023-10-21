@@ -35,6 +35,11 @@
 				"source": "Other.Gun",
 				"target": "Gun",
 				"op": "replace"
+			},
+			{
+				"source": "Other.Accurate",
+				"target": "Accurate",
+				"op": "replace"
 			}
 		]
 	}
