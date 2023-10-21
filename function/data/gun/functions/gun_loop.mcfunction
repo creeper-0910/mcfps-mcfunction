@@ -12,16 +12,16 @@ execute as @a[scores={sneakcount=2,Bullets=1..,GunCoolTime=1..}] at @s run plays
 scoreboard players add @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=0},nbt={SelectedItem:{tag:{Gun:true}}}] GunRepeat 1
 scoreboard players reset @a[scores={GunCoolTime=1..}] GunRepeat
 scoreboard players reset @a[scores={Bullets=0}] GunRepeat
-scoreboard players reset @a[scores={shot_gun=0}] GunRepeat
+execute as @a unless score @s shot_gun = @s shot_gun run scoreboard players reset @s GunRepeat
 
 # gun
 execute as @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=0},nbt={SelectedItem:{tag:{CustomModelData:1}}}] at @s run function gun:bullet_pos
 execute as @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=0},nbt={SelectedItem:{tag:{CustomModelData:2}}}] at @s run function gun:double_bullet_pos
 execute as @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=0},nbt={SelectedItem:{tag:{CustomModelData:3}}}] at @s run function gun:lmg_pos
 execute as @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=0},nbt={SelectedItem:{tag:{CustomModelData:5}}}] at @s run function gun:new_gun_pos
-execute as @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=0},nbt={SelectedItem:{tag:{CustomModelData:6}}}] at @s run function gun:sks_pos
-execute as @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=0, GunRepeat=1},nbt={SelectedItem:{tag:{CustomModelData:7}}}] at @s run function gun:ext_memoria_pos
-execute as @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=0, GunRepeat=3},nbt={SelectedItem:{tag:{CustomModelData:7}}}] at @s run function gun:ext_memoria_pos
+execute as @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=0},nbt={SelectedItem:{tag:{CustomModelData:7}}}] at @s run function gun:sks_pos
+execute as @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=0, GunRepeat=1},nbt={SelectedItem:{tag:{CustomModelData:8}}}] at @s run function gun:ext_memoria_pos
+execute as @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=0, GunRepeat=3},nbt={SelectedItem:{tag:{CustomModelData:8}}}] at @s run function gun:ext_memoria_pos
 # wallhacker
 execute as @a[scores={shot_gun=1},nbt={SelectedItem:{tag:{CustomModelData:4}}}] store result score @s Bullets2 run data get entity @s SelectedItem.tag.Bullets2
 execute as @a if entity @s[scores={shot_gun=1,Bullets=1..,GunCoolTime=0},nbt={SelectedItem:{tag:{CustomModelData:4}}}] unless predicate system:is_sneak at @s run function gun:search_gun_pos
