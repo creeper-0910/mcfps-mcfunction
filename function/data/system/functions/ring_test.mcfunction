@@ -1,8 +1,10 @@
 worldborder set 192
 bossbar set minecraft:timer name "Ring1 残り時間"
+bossbar set minecraft:timer visible true
 gamemode adventure @a
 effect give @a minecraft:health_boost infinite 4
 effect give @a instant_health 1 200
+effect give @a saturation infinite 0 true
 spreadplayers 0 0 190 150 true @a
 function system:rand_player_id
 function system:resetscore
