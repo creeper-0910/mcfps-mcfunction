@@ -5,6 +5,7 @@ data modify storage forward_spreader: Distance set value 5.0f
 execute store result score @s Accurate run data get entity @s SelectedItem.tag.Accurate
 execute store result storage forward_spreader: Spread float 0.01 run scoreboard players get @s Accurate
 execute at @s positioned ~ ~1.62 ~ as @e[tag=SpreadMarker,sort=nearest,limit=1] run function forward_spreader:api/circle
+execute at @e[tag=SpreadMarker] run particle glow ~ ~ ~ 0 0 0 0 30
 #execute at @s facing entity @e[tag=SpreadMarker,sort=nearest,limit=1] feet anchored eyes positioned ^ ^ ^5 run particle end_rod
 
 execute at @s run summon marker ~ ~ ~ {Tags:["bullet_"]}
