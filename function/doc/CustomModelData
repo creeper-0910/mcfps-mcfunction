@@ -28,6 +28,18 @@ lingering_potion 1-4
 4 -> flashbang
 
 sea_lantern
+1 -> pylon_head
+2 -> pylon_leg
+3 -> newt
+4 -> newt_close
+5 -> replicator
+6 -> wat_superleg
+7 -> knife
+8 -> wat_fence
+9 -> trypio
+10 -> launcher
+11 -> tea&cup
+12 -> bullet
 
 mushroo_stew
 1 -> heal kit
