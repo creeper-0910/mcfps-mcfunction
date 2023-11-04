@@ -11,7 +11,7 @@ execute at @s run summon marker ~ ~ ~ {Tags:["bullet_"]}
 execute at @s run tp @e[tag=bullet_] ~ ~1.7 ~ ~ ~
 #execute as @e[tag=bullet_] at @s facing entity @e[tag=SpreadMarker,sort=nearest,limit=1] feet anchored eyes run tp @s ~ ~ ~ ~ ~
 execute store result score #system Range run data get entity @s SelectedItem.tag.Range
-execute as @e[tag=bullet_] facing entity @e[tag=SpreadMarker,sort=nearest,limit=1] feet anchored eyes run function gun:bullet_move_new
+execute at @s as @e[tag=bullet_] facing entity @e[tag=SpreadMarker,sort=nearest,limit=1] feet anchored eyes run function gun:bullet_move_new
 kill @e[tag=bullet_]
 
 execute facing entity @e[tag=SpreadMarker,sort=nearest,limit=1] feet anchored eyes run function gun:select_enemy
