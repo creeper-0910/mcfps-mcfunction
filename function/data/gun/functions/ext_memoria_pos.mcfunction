@@ -5,7 +5,7 @@ tag @s add Shooter
 #execute as @e[tag=bullet_] run function gun:bullet_move_new
 #kill @e[tag=bullet_]
 
-function gun:select_enemy
+#function gun:select_enemy
 # 35 = 47 * 0.75
 #execute as @e[tag=Enemy,distance=..60] run function gun:gun_hit
 #execute as @e[tag=HitterT] run damage @s 5 system:sonic_boom by @p[tag=Shooter]
@@ -18,7 +18,7 @@ function gun:select_enemy
 #execute as @e[tag=HitterT] run damage @s 5 system:sonic_boom by @p[tag=Shooter]
 #execute as @e[tag=HitterT] at @s run playsound entity.experience_orb.pickup player @s ~ ~ ~ 1
 #execute if entity @e[tag=HitterT] run playsound block.glass.break player @s ~ ~ ~ 5
-function gun:bullet_shot_loop
+execute as @s run function gun:bullet_shot_loop
 tag @s remove Shooter
 #tag @e[tag=Enemy,tag=HitterT] remove HitterT
 # 第二反動
