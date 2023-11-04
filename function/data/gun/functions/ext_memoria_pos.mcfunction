@@ -24,6 +24,8 @@ tag @s remove Shooter
 # 第二反動
 #execute as @s at @s run tp @s ~ ~ ~ ~ ~-0.3
 
+execute as @e[tag=ext_exp] at @s run function gun:bullet_move_ext
+
 playsound minecraft:entity.generic.explode master @a ~ ~ ~ 0.25 1.8 0
 playsound minecraft:block.fence_gate.open master @a ~ ~ ~ 0.5 1.5 0
 
