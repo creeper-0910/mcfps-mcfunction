@@ -1,9 +1,3 @@
-# データ取得
-execute store result score #system Burst run data get entity @s SelectedItem.tag.Burst
-
-execute store result score @s Accurate run data get entity @s SelectedItem.tag.Accurate
-execute store result score #system Range run data get entity @s SelectedItem.tag.Range
-
 # forward_spreader
 summon marker ~ ~ ~ {Tags:["SpreadMarker"]}
 data modify storage forward_spreader: Distance set value 5.0f
@@ -12,7 +6,6 @@ execute at @s anchored eyes positioned ^ ^ ^ as @e[tag=SpreadMarker,sort=nearest
 
 summon marker ~ ~ ~ {Tags:["bullet_"]}
 execute at @s anchored eyes positioned ^ ^ ^ run tp @e[tag=bullet_] ~ ~ ~ ~ ~
-execute at @e[tag=bullet_] run particle glow ~ ~ ~ 0 0 0 0 10
 # 実際に弾を飛ばす
 execute as @e[tag=bullet_] at @s facing entity @e[tag=SpreadMarker,sort=nearest,limit=1] feet run function gun:bullet_move_new
 
