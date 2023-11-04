@@ -1,3 +1,4 @@
+say shot
 # forward_spreader
 summon marker ~ ~ ~ {Tags:["SpreadMarker"]}
 data modify storage forward_spreader: Distance set value 5.0f

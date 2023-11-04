@@ -40,6 +40,11 @@
 				"source": "Other.Accurate",
 				"target": "Accurate",
 				"op": "replace"
+			},
+			{
+				"source": "Other.Burst",
+				"target": "Burst",
+				"op": "replace"
 			}
 		]
 	}
