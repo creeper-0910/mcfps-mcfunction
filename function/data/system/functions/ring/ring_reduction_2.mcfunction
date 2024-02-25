@@ -1,0 +1,1 @@
+worldborder set 10 60
