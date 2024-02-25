@@ -14,9 +14,9 @@ execute as @a[team=Blue] run item replace entity @s armor.head with minecraft:le
 scoreboard players set @a kill 0
 scoreboard objectives setdisplay sidebar kill
 scoreboard players set #dummy success 0
-# 3600t -> 180s
-scoreboard players set #dummy last_time 3600
-# リング収縮開始
-schedule function system:ring/ring_reduction_1 80s
-# 収縮が終わったら次のリング 300 + 100
+# 2400t -> 120s
+scoreboard players set #dummy last_time 2400
+# リング収縮開始 180 - 60
+schedule function system:ring/ring_reduction_1 120s
+# 収縮が終わったら次のリング
 schedule function system:ring/ring_test_ring1 180s
