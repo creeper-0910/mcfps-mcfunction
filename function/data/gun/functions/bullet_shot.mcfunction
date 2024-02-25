@@ -5,13 +5,10 @@ execute store result storage forward_spreader: Spread float 0.01 run scoreboard 
 execute at @s anchored eyes positioned ^ ^ ^ as @e[tag=SpreadMarker,sort=nearest,limit=1] run function forward_spreader:api/circle
 
 summon marker ~ ~ ~ {Tags:["bullet_"]}
-execute if entity @s[nbt={Inventory:[{Slot:-106b,Count:1b,tag:{CustomModelData:13}}]}] run say kusa
-#tag @e[tag=bullet_] add ext_exp
 execute at @s anchored eyes positioned ^ ^ ^ run tp @e[tag=bullet_] ~ ~ ~ ~ ~
 # 実際に弾を飛ばす
 execute as @e[tag=bullet_,tag=!ext_exp] at @s facing entity @e[tag=SpreadMarker,sort=nearest,limit=1] feet run function gun:bullet_move_new
-execute as @e[tag=bullet_,tag=ext_exp] at @s facing entity @e[tag=SpreadMarker,sort=nearest,limit=1] feet run say sss
-# function gun:bullet_move_ext
+execute as @e[tag=bullet_,tag=ext_exp] at @s facing entity @e[tag=SpreadMarker,sort=nearest,limit=1] feet run function gun:bullet_move_ext
 
 # ヒット判定
 execute at @s facing entity @e[tag=SpreadMarker,sort=nearest,limit=1] feet anchored eyes positioned ^ ^ ^ run function gun:select_enemy
