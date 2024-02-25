@@ -53,9 +53,9 @@ execute as @e[tag=newt_close,scores={newt_timer=160..}] run kill @s
 #execute as @e[tag=ryujin] at @s run damage @e[distance=..0.99,limit=1,type=!creeper] 4 magic
 
 #Wing
-execute as @a[scores={wing=1..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] at @s run tp @s ^ ^1.5 ^1
+execute as @a[scores={wing=1..}] at @s run tp @s ^ ^1.5 ^1
 execute as @a[scores={wing=1..}] as @s run scoreboard players add @s wing 1
-execute as @a[scores={wing=10..},nbt={SelectedItem:{tag:{CustomModelData:4}}}] at @s run effect give @s slow_falling 1 1
+execute as @a[scores={wing=10..}] at @s run effect give @s slow_falling 1 1
 execute as @a[scores={wing=10..}] as @s run scoreboard players reset @s wing
 
 #bat_bomb

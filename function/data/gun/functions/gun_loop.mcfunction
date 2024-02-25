@@ -22,6 +22,9 @@ execute as @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=0},nbt={SelectedItem:{t
 execute as @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=0},nbt={SelectedItem:{tag:{CustomModelData:7}}}] at @s run function gun:sks_pos
 execute as @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=0, GunRepeat=1},nbt={SelectedItem:{tag:{CustomModelData:8}}}] at @s run function gun:ext_memoria_pos
 execute as @a[scores={shot_gun=1,Bullets=1..,GunCoolTime=0, GunRepeat=3},nbt={SelectedItem:{tag:{CustomModelData:8}}}] at @s run function gun:ext_memoria_pos
+#Extの判定
+execute if entity @s[nbt={SelectedItem:{tag:{CustomModelData:8}},Inventory:[{Slot:-106b,Count:1b,tag:{CustomModelData:13}}]}] run say djnf
+#tag @e[tag=bullet_] add ext_exp
 # wallhacker
 execute as @a[scores={shot_gun=1},nbt={SelectedItem:{tag:{CustomModelData:4}}}] store result score @s Bullets2 run data get entity @s SelectedItem.tag.Bullets2
 execute as @a if entity @s[scores={shot_gun=1,Bullets=1..,GunCoolTime=0},nbt={SelectedItem:{tag:{CustomModelData:4}}}] unless predicate system:is_sneak at @s run function gun:search_gun_pos
@@ -67,3 +70,5 @@ execute as @a if score @s TryReload2 matches 1.. run function gun:active_reload2
 #scoreboard players remove @a[scores={noglow_sn=1..}] noglow_sn 1
 scoreboard players remove @a[scores={isjump=1..}] isjump 1
 scoreboard players remove @a[scores={GunCoolTime=1..}] GunCoolTime 1
+
+
