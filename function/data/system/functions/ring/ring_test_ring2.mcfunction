@@ -1,4 +1,5 @@
 bossbar set minecraft:timer name "最終リング 残り時間"
+bossbar set minecraft:timer max 600
 scoreboard players set #dummy success 2
 # 600t -> 30s
 scoreboard players set #dummy last_time 600
