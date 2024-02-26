@@ -7,8 +7,8 @@ execute at @s anchored eyes positioned ^ ^ ^ as @e[tag=SpreadMarker,sort=nearest
 summon marker ~ ~ ~ {Tags:["bullet_"]}
 execute at @s anchored eyes positioned ^ ^ ^ run tp @e[tag=bullet_] ~ ~ ~ ~ ~
 # 実際に弾を飛ばす
-execute as @e[tag=bullet_,tag=!ext_exp] at @s facing entity @e[tag=SpreadMarker,sort=nearest,limit=1] feet run function gun:bullet_move_new
-execute as @e[tag=bullet_,tag=ext_exp] at @s facing entity @e[tag=SpreadMarker,sort=nearest,limit=1] feet run function gun:bullet_move_ext
+#execute unless entity @a[nbt={SelectedItem:{tag:{Tags:["ext_exp"]}}}] as @e[tag=bullet_] at @s facing entity @e[tag=SpreadMarker,sort=nearest,limit=1] feet run function gun:bullet_move_new
+#execute if entity @a[nbt={SelectedItem:{tag:{Tags:["ext_exp"]}}}] as @e[tag=bullet_] at @s facing entity @e[tag=SpreadMarker,sort=nearest,limit=1] feet run function gun:bullet_move_amr
 
 # ヒット判定
 execute at @s facing entity @e[tag=SpreadMarker,sort=nearest,limit=1] feet anchored eyes positioned ^ ^ ^ run function gun:select_enemy
