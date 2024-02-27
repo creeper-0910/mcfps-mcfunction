@@ -16,6 +16,8 @@ warped_fungus_on_a_stick 1-4
 6 -> trapmine
 7 -> rapido
 8 -> pin
+800 -> Ext_Card1
+801 -> Ext_Card2
 
 spyglass 512
 512 -> sniper

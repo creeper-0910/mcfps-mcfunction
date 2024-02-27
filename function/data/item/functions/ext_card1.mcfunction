@@ -1,0 +1,6 @@
+execute if entity @s[nbt={Inventory:[{Slot:-106b,Count:1b,tag:{Tags:ext_exp}}]}] run tellraw @s {"text":"すでにカードはセットされています"}
+execute if entity @s[nbt={SelectedItem:{tag:{CustomModelData:800}}},nbt=!{Inventory:[{Slot:-106b,Count:1b,tag:{CustomModelData:8}}]}] run tellraw @s {"text":"左手にExterminaMemoriaを持って右クリックで使用"}
+execute unless entity @a[nbt={Inventory:[{Slot:-106b,Count:1b,tag:{Tags:ext_exp}}]}] if entity @s[nbt={SelectedItem:{tag:{CustomModelData:800}},Inventory:[{Slot:-106b,Count:1b,tag:{CustomModelData:8}}]}] run item replace entity @s weapon.offhand with minecraft:carrot_on_a_stick{display:{Name:'{"text":"extermina memoria   [16]"}'},CustomModelData:8,Bullets:16,Gun:true,Range:47,Type:"AR",Burst:2,Tags:ext_exp,kari:kari,exp:"true"}
+execute if entity @s[nbt={SelectedItem:{tag:{CustomModelData:800}},Inventory:[{Slot:-106b,Count:1b,tag:{CustomModelData:8}}]},nbt={Inventory:[{Slot:-106b,Count:1b,tag:{kari:kari}}]}] run item replace entity @s weapon.mainhand with air
+execute if entity @s[nbt={Inventory:[{Slot:-106b,Count:1b,tag:{CustomModelData:8}}]},nbt={Inventory:[{Slot:-106b,Count:1b,tag:{kari:kari}}]}] run item replace entity @s weapon.offhand with minecraft:carrot_on_a_stick{display:{Name:'{"text":"extermina memoria   [16]"}'},CustomModelData:8,Bullets:16,Gun:true,Range:47,Type:"AR",Burst:2,Tags:ext_exp,exp:"true"}
+

@@ -39,8 +39,9 @@ tag @s add Shooter
 execute at @s run summon marker ~ ~ ~ {Tags:["bullet_"]}
 execute at @s run tp @e[tag=bullet_] ~ ~1.6 ~ ~ ~
 execute store result score #system Range run data get entity @s SelectedItem.tag.Range
-execute unless entity @a[nbt={SelectedItem:{tag:{exp:"true"}}}] as @e[tag=bullet_] run function gun:bullet_move_new
+execute unless entity @a[nbt={SelectedItem:{tag:{exp:"true",pois:"true"}}}] as @e[tag=bullet_] run function gun:bullet_move
 execute if entity @a[nbt={SelectedItem:{tag:{exp:"true"}}}] as @e[tag=bullet_] run function gun:bullet_move_ext
+execute if entity @a[nbt={SelectedItem:{tag:{pois:"true"}}}] as @e[tag=bullet_] run function gun:bullet_move_ext_pois
 kill @e[tag=bullet_]
 
 function gun:select_enemy
@@ -54,7 +55,7 @@ tag @e[tag=Enemy,tag=HitterT] remove HitterT
 
 playsound minecraft:entity.generic.explode master @a ~ ~ ~ 0.25 1.8 0
 playsound minecraft:block.fence_gate.open master @a ~ ~ ~ 0.5 1.5 0
-scoreboard players set @s GunCoolTime 10
+scoreboard players set @s GunCoolTime 5
 
 scoreboard players remove @s Bullets 1
 execute store result storage minecraft:data Bullets double 1 run scoreboard players get @s Bullets

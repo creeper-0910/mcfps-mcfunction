@@ -19,6 +19,10 @@ execute as @a[scores={use_ender_eye=1..}] run function item:eye
 kill @e[type=minecraft:eye_of_ender]
 scoreboard players remove @a[scores={noglow=1..}] noglow 1
 
+#Ext_Card Function
+execute as @a[scores={testfor=1..},nbt={SelectedItem:{tag:{CustomModelData:800}}}] at @s run function item:ext_card1
+execute as @a[scores={testfor=1..},nbt={SelectedItem:{tag:{CustomModelData:801}}}] at @s run function item:ext_card2
+
 # heal item
 execute as @a[scores={eat_count=10},nbt={SelectedItem:{tag:{CustomModelData:1}}}] at @s run playsound minecraft:entity.generic.eat player @s ~ ~ ~
 execute as @a[scores={eat_count=20},nbt={SelectedItem:{tag:{CustomModelData:1}}}] at @s run playsound minecraft:entity.generic.eat player @s ~ ~ ~
