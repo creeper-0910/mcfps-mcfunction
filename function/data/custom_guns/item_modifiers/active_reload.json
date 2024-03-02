@@ -1,0 +1,50 @@
+[
+	{
+		"function": "minecraft:copy_nbt",
+		"source": {
+			"type": "minecraft:storage",
+			"source": "minecraft:data"
+		},
+		"ops": [
+			{
+				"source": "Other.CustomModelData",
+				"target": "CustomModelData",
+				"op": "replace"
+			},
+			{
+				"source": "Other.Gun",
+				"target": "Gun",
+				"op": "replace"
+			},
+			{
+				"source": "Other.Bullet",
+				"target": "Bullet",
+				"op": "replace"
+			},
+			{
+				"source": "Other.MaxBullet",
+				"target": "MaxBullet",
+				"op": "replace"
+			},
+			{
+				"source": "Other.ReloadTime",
+				"target": "ReloadTime",
+				"op": "replace"
+			},
+			{
+				"source": "Other.Range",
+				"target": "Range",
+				"op": "replace"
+			},
+			{
+				"source": "Other.CoolTime",
+				"target": "CoolTime",
+				"op": "replace"
+			}
+		]
+	},
+	{
+		"function": "minecraft:set_nbt",
+		"tag": "{Charged:true}"
+	}
+]

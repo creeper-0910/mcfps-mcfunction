@@ -2,6 +2,7 @@
     "values": [
         "system:respawn",
         "gun:gun_loop",
+        "custom_guns:tick",
         "system:loop",
         "skill:loop",
         "item:loop",

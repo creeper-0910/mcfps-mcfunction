@@ -1,0 +1,27 @@
+[
+	{
+		"function": "minecraft:set_name",
+		"entity": "this",
+		"name": [
+			{
+				"text": "001 ["
+			},
+			{
+				"score": {
+					"name": "@s",
+					"objective": "Bullet"
+				}
+			},
+			{
+				"text": "]"
+			},
+			{
+				"text": " -Reloading-"
+			}
+		]
+	},
+	{
+		"function": "minecraft:set_nbt",
+		"tag": "{Reloading:true}"
+	}
+]
