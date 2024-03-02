@@ -1,5 +1,5 @@
-1.gun:gun_loopに銃固有処理登録を入れる
-2.銃固有処理を入れる gun:bullet_pos, gun:bullet_moveを参考に
-3.gun:reload.mcfunctionにリロード後処理を入れる
-4.gun:gun_bullet_nameにitem_modifierを登録(リロード時に使います)
-5.gun:give/に取得コマンドを書く
+0.custom_guns:give/に取得コマンドを書く
+1.custom_guns:crossbow_tick or custom_guns:spyglass_tick に銃固有処理を呼び出すコードを追加
+2.銃固有処理を入れる 大きくいじらなければ基本はcustom_guns:001/tick or custom_guns:002/tick のコピーでOK
+3.custom_guns:set_gun_name と custom_guns:set_gun_reloading にitem_modifierを呼び出す処理を追加
+4.item_modifierを追加(リロード時に使います)
